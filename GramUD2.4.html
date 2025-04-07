@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice sur les locutions "d'autant plus/moins/mieux que"</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .exercise-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .answer-area {
+            margin-top: 15px;
+            padding: 15px;
+            background-color: #e8f8f5;
+            border-radius: 5px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-answer {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-answer:hover {
+            background-color: #2980b9;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+        }
+        .correct-answer {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .radio-group {
+            margin: 10px 0;
+        }
+        .radio-option {
+            margin: 5px 0;
+        }
+        .radio-option input {
+            margin-right: 8px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercice sur les locutions "d'autant plus/moins/mieux que"</h1>
+    
+    <div class="exercise-block">
+        <h2>Instructions</h2>
+        <p><strong>Remplacez les pointillés par une de ces trois locutions, proposez une paraphrase qui en explique le sens, puis traduisez-les.</strong></p>
+        
+        <!-- Question 1 -->
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">J´hésite .... à lui donner un peu d'argent ...... je sais qu'il va aller le boire tout de suite.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-a" value="a">
+                    <label for="q1-a">a. d'autant mieux ...que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-b" value="b">
+                    <label for="q1-b">b. d'autant plus .... que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-c" value="c">
+                    <label for="q1-c">c. d'autant moins ... que</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a1')">Voir la réponse</button>
+            <div class="answer" id="a1">
+                <p class="correct-answer">Réponse correcte: <span class="correct">b. d'autant plus .... que</span></p>
+                <p><strong>Paraphrase:</strong> J´hésite déjà en principe à lui donner de l´argent mais j´hésite encore plus parce que je sais qu'il va aller le boire tout de suite.</p>
+                <p><strong>Traduction:</strong> Tengo aún más dudas si cabe en darle algo de dinero porque sé que irá corriendo a gastárselo en bebida.</p>
+            </div>
+        </div>
+        
+        <!-- Question 4 -->
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">Il avait perdu tout espoir de guérir .... il avait étudié à fond les risques de sa maladie.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-a" value="a">
+                    <label for="q4-a">a. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-b" value="b">
+                    <label for="q4-b">b. d'autant mieux qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-c" value="c">
+                    <label for="q4-c">c. d'autant moins qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a4')">Voir la réponse</button>
+            <div class="answer" id="a4">
+                <p class="correct-answer">Réponse correcte: <span class="correct">a. d'autant plus qu'</span></p>
+                <p><strong>Paraphrase:</strong> Il avait perdu l'espoir de guérir surtout parce qu'il avait étudié les risques de sa maladie.</p>
+                <p><strong>Traduction:</strong> Había perdido toda/cualquier esperanza de curarse, tanto más cuanto que/máxime/más aún/sobre todo porque había estudiado a fondo los riesgos de su enfermedad.</p>
+            </div>
+        </div>
+        
+        <!-- Question 7 -->
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">Je ne veux pas prendre ce mauvais chemin ...... il est toujours très glissant quand il pleut.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-a" value="a">
+                    <label for="q7-a">a. d'autant moins qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-b" value="b">
+                    <label for="q7-b">b. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-c" value="c">
+                    <label for="q7-c">c. d'autant mieux qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a7')">Voir la réponse</button>
+            <div class="answer" id="a7">
+                <p class="correct-answer">Réponse correcte: <span class="correct">b. d'autant plus qu'</span></p>
+                <p><strong>Paraphrase:</strong> Je ne veux pas le prendre surtout parce qu'il est très glissant quand il pleut.</p>
+                <p><strong>Traduction:</strong> No quiero coger este camino en mal estado sobre todo/y menos aún porque resbala siempre mucho cuando llueve.</p>
+            </div>
+        </div>
+        
+        <!-- Question 10 -->
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text">Je ne comprends pas que tu dises du mal de ton ami ...... lui il ne dit jamais rien de désobligeant sur toi.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-a" value="a">
+                    <label for="q10-a">a. d'autant moins que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-b" value="b">
+                    <label for="q10-b">b. d'autant mieux que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-c" value="c">
+                    <label for="q10-c">c. d'autant plus que</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a10')">Voir la réponse</button>
+            <div class="answer" id="a10">
+                <p class="correct-answer">Réponse correcte: <span class="correct">c. d'autant plus que</span></p>
+                <p><strong>Paraphrase:</strong> Je ne comprends pas que tu dises du mal de ton ami surtout parce que lui ne dit jamais rien de désobligeant sur toi.</p>
+                <p><strong>Traduction:</strong> No entiendo que hables de tu amigo, sobre todo porque/más aún cuando/él nunca dice nada desagradable sobre ti.</p>
+            </div>
+        </div>
+        
+        <!-- Question 13 -->
+        <div class="question" id="q13">
+            <div class="question-number">Question 13</div>
+            <div class="question-text">Il mérite .... tes bontés ......il ne sait dire que des méchancetés sur toi.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-a" value="a">
+                    <label for="q13-a">a. d'autant mieux .... que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-b" value="b">
+                    <label for="q13-b">b. d'autant moins ....que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-c" value="c">
+                    <label for="q13-c">c. d'autant plus ...que</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a13')">Voir la réponse</button>
+            <div class="answer" id="a13">
+                <p class="correct-answer">Réponse correcte: <span class="correct">b. d'autant moins ....que</span></p>
+                <p><strong>Paraphrase:</strong> Il mérite encore moins tes bontés, vu qu'il ne sait dire que des méchancetés sur toi.</p>
+                <p><strong>Traduction:</strong> Se merece aún menos que seas atento/considerado con él porque sólo hace que hablar mal de ti.</p>
+            </div>
+        </div>
+        
+        <!-- Question 16 -->
+        <div class="question" id="q16">
+            <div class="question-number">Question 16</div>
+            <div class="question-text">On a ..... envie de lui offrir un livre .... on sait qu'il n'en ouvre jamais un.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-a" value="a">
+                    <label for="q16-a">a. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-b" value="b">
+                    <label for="q16-b">b. d'autant mieux qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-c" value="c">
+                    <label for="q16-c">c. d'autant moins qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a16')">Voir la réponse</button>
+            <div class="answer" id="a16">
+                <p class="correct-answer">Réponse correcte: <span class="correct">c. d'autant moins qu'</span></p>
+                <p><strong>Paraphrase:</strong> On a encore moins envie de lui offrir un livre sachant qu'il ne lit jamais.</p>
+                <p><strong>Traduction:</strong> Aún nos apetece menos si cabe regalarle un libro porque sabemos que nunca abre ninguno.</p>
+            </div>
+        </div>
+        
+        <!-- Question 19 -->
+        <div class="question" id="q19">
+            <div class="question-number">Question 19</div>
+            <div class="question-text">Il travaille .... il devine la fierté de ses parents à l'idée de sa réussite.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q19" id="q19-a" value="a">
+                    <label for="q19-a">a. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q19" id="q19-b" value="b">
+                    <label for="q19-b">b. d'autant mieux qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q19" id="q19-c" value="c">
+                    <label for="q19-c">c. d'autant moins qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a19')">Voir la réponse</button>
+            <div class="answer" id="a19">
+                <p class="correct-answer">Réponse correcte: <span class="correct">a. d'autant plus qu'</span> (ou <span class="correct">b. d'autant mieux qu'</span>)</p>
+                <p><strong>Paraphrase:</strong> D'habitude il travaille bien, mais il travaille encore mieux sachant/parce qu'il sait que ses parents seront fiers de lui lorsqu'il aura réussi.</p>
+                <p><strong>Traduction:</strong> Se esfuerza aún más pensando en lo orgullosos que se sentirán sus padres ante su éxito.</p>
+            </div>
+        </div>
+        
+        <!-- Question 22 -->
+        <div class="question" id="q22">
+            <div class="question-number">Question 22</div>
+            <div class="question-text">Il réussit ... ses parents lui paient des cours particuliers.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q22" id="q22-a" value="a">
+                    <label for="q22-a">a. d'autant moins que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q22" id="q22-b" value="b">
+                    <label for="q22-b">b. d'autant plus que</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q22" id="q22-c" value="c">
+                    <label for="q22-c">c. d'autant mieux que</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a22')">Voir la réponse</button>
+            <div class="answer" id="a22">
+                <p class="correct-answer">Réponse correcte: <span class="correct">c. d'autant mieux que</span></p>
+                <p><strong>Paraphrase:</strong> Normalement il réussit bien, mais il réussit encore mieux parce que ses parents lui paient des cours particuliers.</p>
+                <p><strong>Traduction:</strong> Sacan aún mejores notas porque sus padres le pagan clases particulares.</p>
+            </div>
+        </div>
+        
+        <!-- Question 25 -->
+        <div class="question" id="q25">
+            <div class="question-number">Question 25</div>
+            <div class="question-text">On prête .... attention à ce ..... il dit qu'il parle toujours à voix très basse sans discernement.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q25" id="q25-a" value="a">
+                    <label for="q25-a">a. d'autant moins qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q25" id="q25-b" value="b">
+                    <label for="q25-b">b. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q25" id="q25-c" value="c">
+                    <label for="q25-c">c. d'autant mieux qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a25')">Voir la réponse</button>
+            <div class="answer" id="a25">
+                <p class="correct-answer">Réponse correcte: <span class="correct">b. d'autant plus qu'</span> (mais <span class="correct">a. d'autant moins qu'</span> et <span class="correct">c. d'autant mieux qu'</span> sont aussi possibles selon le contexte)</p>
+                <p><strong>Paraphrase:</strong> On l'écoute encore plus attentivement quand il parle parce qu'il le fait tout doucement et on n'arrive pas à le comprendre.</p>
+                <p><strong>Traduction:</strong> Aún prestamos más atención a lo que dice porque habla siempre muy bajito y no se le entiende nada.</p>
+            </div>
+        </div>
+        
+        <!-- Question 28 -->
+        <div class="question" id="q28">
+            <div class="question-number">Question 28</div>
+            <div class="question-text">Cette enfant était .... aimée par ses oncles et tantes .... on la savait orpheline.</div>
+            
+            <div class="radio-group">
+                <div class="radio-option">
+                    <input type="radio" name="q28" id="q28-a" value="a">
+                    <label for="q28-a">a. d'autant moins qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q28" id="q28-b" value="b">
+                    <label for="q28-b">b. d'autant plus qu'</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q28" id="q28-c" value="c">
+                    <label for="q28-c">c. d'autant mieux qu'</label>
+                </div>
+            </div>
+            
+            <button class="show-answer" onclick="showAnswer('a28')">Voir la réponse</button>
+            <div class="answer" id="a28">
+                <p class="correct-answer">Réponse correcte: <span class="correct">b. d'autant plus qu'</span></p>
+                <p><strong>Paraphrase:</strong> Ses oncles et tantes l'aimaient déjà beaucoup mais comme elle était orpheline ils l'aimaient encore plus.</p>
+                <p><strong>Traduction:</strong> Esta niña era más querida si cabe por sus tíos porque sabían que era huérfana.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
+            } else {
+                answer.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>
