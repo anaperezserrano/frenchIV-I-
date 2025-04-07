@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expressions Temporelles en Français</title>
+    <title>Exercices sur le Temps</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
             background-color: #f5f5f5;
@@ -16,7 +16,7 @@
         h1, h2, h3 {
             color: #2c3e50;
         }
-        .question-block {
+        .exercise-block {
             background-color: white;
             border-radius: 8px;
             padding: 20px;
@@ -35,31 +35,26 @@
             font-weight: bold;
             margin-bottom: 10px;
         }
-        .answer-input {
-            padding: 8px 12px;
-            border-radius: 4px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            width: 100%;
-            max-width: 500px;
-            margin-top: 5px;
-        }
-        .correct {
-            color: #28a745;
+        .question-number {
             font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
         }
-        .incorrect {
-            color: #dc3545;
+        .text-content {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
         }
-        .feedback {
-            display: none;
-            margin-top: 10px;
-            padding: 10px;
+        .answer-area {
+            margin-top: 15px;
+            padding: 15px;
             background-color: #e8f8f5;
-            border-radius: 4px;
+            border-radius: 5px;
             border-left: 4px solid #2ecc71;
         }
-        .show-feedback {
+        .show-answer {
             background-color: #3498db;
             color: white;
             border: none;
@@ -69,30 +64,19 @@
             margin-top: 10px;
             font-size: 14px;
         }
-        .show-feedback:hover {
+        .show-answer:hover {
             background-color: #2980b9;
         }
-        .controls {
-            text-align: center;
-            margin: 20px 0;
-        }
-        .controls button {
-            background-color: #6c757d;
-            color: white;
-            border: none;
-            padding: 10px 15px;
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
             border-radius: 4px;
-            cursor: pointer;
-            margin: 0 5px;
-            font-size: 14px;
         }
-        .controls button:hover {
-            background-color: #5a6268;
-        }
-        .question-number {
+        .correct-answer {
+            color: #28a745;
             font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
         }
         table {
             width: 100%;
@@ -106,167 +90,220 @@
             padding: 10px;
             text-align: left;
         }
-        th {
-            background-color: #f2f2f2;
+        .text-right {
+            text-align: right;
+        }
+        .text-justify {
+            text-align: justify;
         }
     </style>
 </head>
 <body>
-    <h1>Expressions Temporelles en Français</h1>
-    <div class="controls">
-        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
-        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
-    </div>
+    <h1>Exercices sur les expressions du temps</h1>
     
-    <div class="question-block">
+    <div class="exercise-block">
+        <h2>Texte: Le temps du week-end</h2>
+        
+        <div class="text-content">
+            <table>
+                <tbody>
+                    <tr>
+                        <td style="width: 50%;">
+                            <p class="text-justify"><strong>La mode est au court</strong>. <strong>De plus en plus, les Français préfèrent partir plus souvent, moins loin, moins longtemps, plus intelligemment. </strong><strong>Suggestions d´escapades...</strong></p>
+                            <p class="text-justify">Ils partent tous. Et ne s'en lassent pas. Deux jours à Rome, trois à Venise, deux à Florence, un et demi à Londres. C'est la folie du voyage court. Partir, ce n´est plus seulement partir loin. Ils veulent non pas découvrir le monde, mais le re-découvrir. Respirer l'air de liberté qui souffle à Prague, Budapest ou Berlin, « faire » les capitales européennes, combler leurs lacunes, de Stockholm à Berne, de Madrid à Oslo, reprendre, comme autrefois, lorsqu'ils étaient étudiants, la route du Kent et du Surrey.</p>
+                            <p class="text-justify">Ils veulent retrouver l'air profond et sûr de la vraie France, découvrir le Périgord vert dans une maison de meunier au cœur d'une Venise champêtre que baignent les eaux de la Dronne, converser avec Colette depuis sa maison de Varetz; aux abords de Brive. Aborder la Provence ou la Côte d'Azur par l´arrière-pays, dénicher les gorges du Loup et la vallée des Merveilles, puis repartir le temps d´un coup d'aile vers Paris.</p>
+                            <p class="text-justify">« <em>La mode du voyage court</em> ? <em>Mais cela ne date pas d'hier </em>», lâche Gilbert Petit de Mirbeck, directeur général de Visit France. Le spécialiste du genre affirme l´avoir vue venir il y a près de dix ans, du temps où il était directeur commercial d'Air Inter. « <em>Prendre des vacances plus courtes et plus souvent, les répéter dans l'année, voilà qui correspond non à une mode, mais à un style de vie</em>. <em>Depuis trois ans, c'est net : on ne passe plus un mois complet à se dorer sur la plage au mois d'août. Les gens ont besoin de séjours qui coupent et aèrent leur année de travail. On apprécie autant les séjours d'hiver que d'été. Au lieu de trois semaines prises d'un bloc sur juillet-août, on part trois ou quatre fois dans l'année pour des destinations différentes.</em> »[...] «</p>
+                            <p class="text-justify">«<em>Si le Français part plus court et plus souvent,</em> affirme Régis Bulot, le président des "RC" (Routard Conseil), <em>il aspire à la meilleure qualité. Il suit le rythme chaotique des vacances scolaires et cherche à s'éloigner le moins longtemps possible de son travail.Il ne bronze plus idiot, mais s'oriente vers la remise en forme par la thalasso (ce que propose, par exemple, le Castel Clara, à Belle-Île), soit vers le stage sportif, soit vers le séjour culturel. Son temps n'est pas libre, mais utilisé pour reprendre le rythme de travail après s'être enrichi.»</em></p>
+                        </td>
+                        <td style="width: 50%;" valign="top">
+                            <p class="text-justify">Vraie France ou Europe proche. Ce sont les deux vedettes du séjour court. Pour la France, la SNCF est devenue plus que performante. Grâce au TGV, Mâcon n'est plus qu'à une heure quarante de Paris, et, avec lui, La Bresse, les vignes de Pouilly-Fuissé, les souvenirs de Milly-Lamartine, les monts du Beaujolais et la Roche de Solutré. Rennes et Nantes à deux heures, et Saint-Malo, La Baule, Paimpol aux abords immédiats. « <em>Grâce où TGV, la France s´est rétrécie</em> », lance Suzanne Lannes de la SNCF, qui ajoute: «<em>On a raccourci le temps du transport mais aussi celui du délai de réservation et d'achat grâce à la billetterie automatique. Le départ est facilité et les séjours se multiplient dans le temps</em>. » […]</p>
+                            <p class="text-justify">« <em>Les villes d'Europe sont, depuis longtemps, le sujet préféré des Français.</em> » Les pays de l'Est même plébiscités, ne sont pas « totalement » visités. Explication de Darmon « <em>Les structures d'accueil sont insuffisantes et puis... il n'y a pas grand-chose à manger</em>. »</p>
+                            <p class="text-justify">Prague, l'un des favoris de Transtours, le spécialiste n° 1 des pays de l'Est, et Budapest font, à cet égard, figure d'exception. « <em>Prague est l'un des plus jolis rêves baroques des Français</em> », lance Jean-Claude Georget de Transtours. La vedette absolue du court séjour à l'étranger ? Londres, bien sûr, ma is aussi la campagne du sud de l'Angleterre, et puis le pays de Shakespeare, Edimbourg, l'écossaise aristo, et Glasgow, dont on redécouvre les atouts culturels. «<em>L'avantage de l'Angleterre par rapport aux modes actuelles ?</em> interroge tout haut Pierre Bergasse, de l'Office du tourisme de Grande-Bretagne. <em>Avec sa verdure, ses petites maisons, son amour des traditions, son écologie bonhomme, elle cadre parfaitement avec les besoins actuels des vacanciers en quête d'anti-stress.</em> »</p>
+                            <p class="text-justify">Albion, de perfide, devient indispensable, avant qu'avec l´achèvement du tunnel elle devienne bien plus : un allié naturel qui redonne à la notion de week-end sa raison d'être.</p>
+                            <p class="text-right">Gilles Pudlowski</p>
+                            <p class="text-right"><em>Le Point</em>.,25.4.1992.</p>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
         <div class="question" id="q1">
-            <div class="question-number">Exercice 1 - Prépositions temporelles</div>
-            <div class="question-text">
-                <p><strong>Complétez le tableau avec les équivalents en espagnol des expressions temporelles en français</strong></p>
-                
-                <table>
-                    <tr>
-                        <th>Expression française</th>
-                        <th>Votre traduction</th>
-                        <th>Réponse</th>
-                    </tr>
-                    <tr>
-                        <td>depuis trois ans</td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q1a')">Voir</button>
-                            <div class="feedback" id="f1a"><span class="correct">desde hace tres años</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>dans l'année</td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q1b')">Voir</button>
-                            <div class="feedback" id="f1b"><span class="correct">durante el año</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>à une heure quarante</td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q1c')">Voir</button>
-                            <div class="feedback" id="f1c"><span class="correct">a una hora y cuarenta</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>au mois d'août</td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q1d')">Voir</button>
-                            <div class="feedback" id="f1d"><span class="correct">en el mes de agosto</span></div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>sur juillet-août</td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q1e')">Voir</button>
-                            <div class="feedback" id="f1e"><span class="correct">en julio-agosto</span></div>
-                        </td>
-                    </tr>
-                </table>
+            <div class="question-number">Question 1</div>
+            <div class="question-text">Différents moyens grammaticaux permettent d´exprimer LE TEMPS. Relevez dans le texte <em>Le temps du week-end</em> les <strong>noms et syntagmes nominaux</strong> qui expriment le temps</div>
+            
+            <button class="show-answer" onclick="showAnswer('a1')">Voir la réponse</button>
+            <div class="answer" id="a1">
+                <p class="correct-answer">NOMS et SYNTAGMES NOMINAUX:</p>
+                <ul>
+                    <li>deux jours</li>
+                    <li>trois (jours)</li>
+                    <li>un (jour) et demi</li>
+                    <li>un mois complet</li>
+                    <li>séjour d´hiver/d´été</li>
+                    <li>trois semaines (prises d´un bloc)</li>
+                    <li>trois ou quatre fois</li>
+                    <li>le temps du transport</li>
+                    <li>le temps du week-end</li>
+                    <li>le temps d'un coup d'aile</li>
+                    <li>délai de réservation</li>
+                </ul>
             </div>
         </div>
         
         <div class="question" id="q2">
-            <div class="question-number">Exercice 2 - Conjonctions temporelles</div>
-            <div class="question-text">
-                <p><strong>Associez chaque conjonction temporelle avec sa valeur et son équivalent en espagnol</strong></p>
+            <div class="question-number">Question 2</div>
+            <div class="question-text">Relevez dans le texte <em>Le temps du week-end</em> les phrases où apparaissent des <strong>adverbes</strong> de temps et proposez pour chacun d'eux un synonyme (équivalent intralingual) et une traduction (equivalent interlingual).</div>
+            
+            <button class="show-answer" onclick="showAnswer('a2')">Voir la réponse</button>
+            <div class="answer" id="a2">
+                <p class="correct-answer">ADVERBES :</p>
                 
-                <table>
-                    <tr>
-                        <th>Conjonction</th>
-                        <th>Valeur temporelle</th>
-                        <th>Votre traduction</th>
-                        <th>Réponse</th>
-                    </tr>
-                    <tr>
-                        <td>lorsque</td>
-                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q2a')">Voir</button>
-                            <div class="feedback" id="f2a">
-                                <p>Valeur: <span class="correct">simultanéité</span></p>
-                                <p>Traduction: <span class="correct">cuando</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>du temps où</td>
-                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q2b')">Voir</button>
-                            <div class="feedback" id="f2b">
-                                <p>Valeur: <span class="correct">simultanéité</span></p>
-                                <p>Traduction: <span class="correct">en la época en que</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>avant que</td>
-                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
-                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
-                        <td><button class="show-feedback" onclick="showFeedback('q2c')">Voir</button>
-                            <div class="feedback" id="f2c">
-                                <p>Valeur: <span class="correct">postériorité</span></p>
-                                <p>Traduction: <span class="correct">antes de que</span></p>
-                            </div>
-                        </td>
-                    </tr>
-                </table>
+                <p><strong>1. SOUVENT</strong> : fréquence : Fréquemment = a menudo</p>
+                <ul>
+                    <li><em>partir plus <strong>souvent</strong></em> (chapeau, l.3) = (más) a menudo</li>
+                    <li><em>prendre des vacances plus courtes et plus <strong>souvent</strong></em> (3ème paragraphe, l. 10)</li>
+                    <li><em>le français part plus court et plus <strong>souvent</strong></em> (4- 1)</li>
+                </ul>
+                
+                <p><strong>2. LONGTEMPS</strong> : Durée :</p>
+                <ul>
+                    <li>(partir) <em>moins </em><strong><em>longtemps</em></strong> (chapeau, 4) : partir) plus court/ pendant moins de temps = (Marcharse) durante menos tiempo</li>
+                    <li><em>cherche à s'éloigner le moins <strong>longtemps</strong> possible</em> (4-6) : le moins de temps possible/ le moindre temps possible = durante) el menor tiempo posible</li>
+                </ul>
+                
+                <p><strong>3. AUTREFOIS</strong> : Évoque un moment passé : Anciennement, jadis, dans un temps passé, il y a longtempts, ça fait longtemps = antaño, en otro(s) tiempo(s), en tiempos pasados, como en su día</p>
+                <ul>
+                    <li><em>reprendre, comme <strong>autrefois</strong>, la route du Kent et du Surrey</em> (1-13)</li>
+                </ul>
+                
+                <p><strong>REMARQUE :</strong></p>
+                <p><strong>PUIS:</strong> connecteur du discours qui sert à structurer l´information et qui marque la fin d´une succession d´action dans le temps: "después", 'finalmente'</p>
+                <ul>
+                    <li><em>Ils veulent retrouver l'air profond et sûr de la vraie France, découvrir le Périgord vert dans une maison de meunier au cœur d'une Venise champêtre que baignent les eaux de la Dronne, converser avec Colette depuis sa maison de Varetz; aux abords de Brive. Aborder la Provence ou la Côte d'Azur par l´arrière-pays, dénicher les gorges du Loup et la vallée des Merveilles, <strong>puis</strong> repartir le temps d´un coup d'aile vers Paris.</em></li>
+                </ul>
             </div>
         </div>
         
         <div class="question" id="q3">
-            <div class="question-number">Exercice 3 - Adverbes temporels</div>
-            <div class="question-text">
-                <p><strong>Traduisez les phrases suivantes en espagnol en faisant attention aux adverbes temporels</strong></p>
+            <div class="question-number">Question 3</div>
+            <div class="question-text">Relevez dans le texte les phrases où l'on trouve des expressions qui marquent le <strong>TEMPS</strong> précédées de <strong>prépositions</strong>. Proposez pour chacune un synonyme (équivalent intralingual) et une traduction (equivalent interlingual).</div>
+            
+            <button class="show-answer" onclick="showAnswer('a3')">Voir la réponse</button>
+            <div class="answer" id="a3">
+                <p class="correct-answer">Expressions avec prépositions :</p>
                 
-                <p>1. Les Français partent plus souvent en vacances maintenant.<br>
-                   <input type="text" class="answer-input" placeholder="Votre traduction...">
-                   <button class="show-feedback" onclick="showFeedback('q3a')">Voir la réponse</button>
-                   <div class="feedback" id="f3a">Réponse correcte: <span class="correct">Los franceses se van de vacaciones más a menudo ahora.</span></div>
-                </p>
+                <p><strong>1. DEPUIS (préposition) + expression de temps:</strong></p>
+                <ul>
+                    <li><em>depuis trois ans c'est net</em> (3-15)</li>
+                    <li><em>les villes d'Europe sont, depuis longtemps</em> (6-1)</li>
+                </ul>
+                <p>Valeur : durée d'une action à partir d'un moment précis durée ouverte : elle a commencé et elle n'est pas encore terminée.</p>
+                <p>Équivalents intralinguals: il y a trois ans/longtemps que... ; ça fait trois ans/longtemps que...; voilà trois ans/longtemps que ...</p>
+                <p>Équivalents interlinguales: desde hace / desde hace mucho tiempo</p>
                 
-                <p>2. Autrefois, on restait longtemps au même endroit.<br>
-                   <input type="text" class="answer-input" placeholder="Votre traduction...">
-                   <button class="show-feedback" onclick="showFeedback('q3b')">Voir la réponse</button>
-                   <div class="feedback" id="f3b">Réponse correcte: <span class="correct">Antaño/En otros tiempos, se quedaban mucho tiempo en el mismo lugar.</span></div>
-                </p>
+                <p><strong>2. IL Y A :</strong></p>
+                <ul>
+                    <li><em>Le spécialiste du genre affirme l'avoir vue venir il y a près de dix ans</em> (3-6)</li>
+                </ul>
+                <p>Équivalents intralinguaux: ça fait, depuis, voilà</p>
+                <p>Équivalents interlinguaux: hace unos/alrededor de/cerca de diez años</p>
                 
-                <p>3. Ils cherchent à s'éloigner le moins longtemps possible.<br>
-                   <input type="text" class="answer-input" placeholder="Votre traduction...">
-                   <button class="show-feedback" onclick="showFeedback('q3c')">Voir la réponse</button>
-                   <div class="feedback" id="f3c">Réponse correcte: <span class="correct">Buscan alejarse durante el menor tiempo posible.</span></div>
-                </p>
+                <p><strong>3. DANS L'ANNÉE:</strong></p>
+                <ul>
+                    <li><em>prendre des vacances plus courtes et plus souvent, les répéter dans l'année</em> (3-11)</li>
+                    <li><em>on part trois ou quatre fois dans l'année</em> (3-25)</li>
+                </ul>
+                <p>Équivalents intralinguaux: pendant</p>
+                <p>Équivalents interlinguaux: durante el año</p>
+                
+                <p><strong>4. DANS LE TEMPS:</strong></p>
+                <ul>
+                    <li><em>Le départ est facilité et les séjours se multiplient dans le temps</em> (5-19)</li>
+                </ul>
+                <p>Équivalents interlinguaux: en el tiempo</p>
+                
+                <p><strong>5. À UNE HEURE QUARANTE:</strong></p>
+                <ul>
+                    <li><em>Mâcon n'est plus qu'à une heure quarante</em></li>
+                </ul>
+                <p>Équivalents interlinguaux: a una hora y cuarenta</p>
+                
+                <p><strong>6. À DEUX HEURES:</strong></p>
+                <ul>
+                    <li><em>Rennes et Nantes à deux heures</em></li>
+                </ul>
+                <p>Équivalents interlinguaux: a dos horas</p>
+                
+                <p><strong>7. AU MOIS D'AOÛT:</strong></p>
+                <ul>
+                    <li><em>on ne reste plus un mois complet à se dorer sur la plage au mois d'août</em> (3-18)</li>
+                </ul>
+                <p>Équivalents intralinguaux: en août</p>
+                <p>Équivalents interlinguaux: en el mes de agosto</p>
+                
+                <p><strong>8. SUR JUILLET-AOÛT:</strong></p>
+                <ul>
+                    <li><em>au lieu de trois semaines prises d'un bloc sur juillet-août, on part...</em> (3-25)</li>
+                </ul>
+                <p>Équivalents intralinguaux: vers</p>
+                <p>Équivalents interlinguaux: en julio-agosto, durante juilio-agosto</p>
+                
+                <p><strong>9. APRÈS + infinif passé:</strong></p>
+                <ul>
+                    <li><em>son temps n'est pas libre, mais utilisé pour reprendre le rythme de travail après s'être enrichi</em></li>
+                </ul>
+                <p>Équivalents intralinguaux: quand</p>
+                <p>Équivalents interlinguaux: después de + infinitif présent</p>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">Relevez dans le texte les phrases qui contiennent des <strong>conjonctions</strong> qui marquent le TEMPS. Indiquez le <strong>mode verbal</strong> qui les suit et proposez des équivalents intralinguaux (synonymes) et interlinguaux (équivalents de traduction).</div>
+            
+            <button class="show-answer" onclick="showAnswer('a4')">Voir la réponse</button>
+            <div class="answer" id="a4">
+                <p class="correct-answer">Conjonctions de temps :</p>
+                
+                <p><strong>1. LORSQUE :</strong></p>
+                <ul>
+                    <li><em>ils veulent reprendre, comme autrefois, <strong>lorsqu'</strong>ils étaient étudiants, la route du Kent et du Surrey</em> (1-13)</li>
+                </ul>
+                <p>Valeur : simultanéité</p>
+                <p>Mode : indicatif</p>
+                <p>Équivalent intralingual : Quand (moins soutenue que <em>lorsque</em>)</p>
+                <p>Equivalent interlingual : cuando + indicativo</p>
+                
+                <p><strong>2. DU TEMPS OÙ:</strong></p>
+                <ul>
+                    <li><em>l y a près de dix ans, <strong>du temps où</strong> il était directeur commercial d'Air Inter</em>(3-7)</li>
+                </ul>
+                <p>Valeur : Simultanéité (Action ponctuelle ou en cours d'accomplissement)</p>
+                <p>Mode : indicatif</p>
+                <p>Équivalents intralinguaux: Lorsque, quand, pendant que, tandis que, alors que, au moment où</p>
+                <p>Equivalent interlingual : en la época en que + indicativo</p>
+                
+                <p><strong>3. AVANT QUE:</strong></p>
+                <ul>
+                    <li><em>Albion, de perfide, devient indispensable, <strong>avant qu'</strong> avec l'achèvement du tunnel elle devienne bien plus</em> : ... (7-2)</li>
+                </ul>
+                <p>Valeur : Postériorité (la subordonnée est postérieure à la principale : a lieu après)</p>
+                <p>Mode : subjonctif</p>
+                <p>Équivalents intralinguaux: En attendant que, jusqu'à ce que, d'ici à ce que, le temps que, tant que</p>
+                <p>Equivalents interlinguaux: antes de que, antes que, primero que + subjuntivo</p>
             </div>
         </div>
     </div>
 
     <script>
-        function showFeedback(questionId) {
-            const feedbackId = 'f' + questionId.substring(1);
-            const feedback = document.getElementById(feedbackId);
-            if (feedback.style.display === "block") {
-                feedback.style.display = "none";
+        function showAnswer(answerId) {
+            const answer = document.getElementById(answerId);
+            if (answer.style.display === "block") {
+                answer.style.display = "none";
             } else {
-                feedback.style.display = "block";
+                answer.style.display = "block";
             }
-        }
-        
-        function showAllFeedback() {
-            const feedbacks = document.querySelectorAll('.feedback');
-            feedbacks.forEach(fb => {
-                fb.style.display = "block";
-            });
-        }
-        
-        function hideAllFeedback() {
-            const feedbacks = document.querySelectorAll('.feedback');
-            feedbacks.forEach(fb => {
-                fb.style.display = "none";
-            });
         }
     </script>
 </body>
