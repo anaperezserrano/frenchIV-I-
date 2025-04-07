@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futur antérieur - Exercice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+        .construction {
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: medium;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .attention {
+            color: #d35400;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Futur antérieur - Formation et emploi</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Formation du futur antérieur</div>
+            <div class="question-text">
+                <p><span class="underline"><strong>FORMATION :</strong></span></p>
+                <p>Le <strong>futur antérieur</strong> est le temps composé du <strong>futur</strong>. Il se forme en suivant la règle :</p>
+            </div>
+            
+            <div class="construction">
+                <p><strong>auxiliaire AVOIR/ÊTRE au <input type="text" class="answer-input" placeholder="Votre réponse ici..."></strong></p>
+                <p><strong>+</strong></p>
+                <p><strong><input type="text" class="answer-input" placeholder="Votre réponse ici..."> du verbe à conjuguer</strong></p>
+                <p><strong><span style="color: #000000;">J'<span style="text-decoration: underline;">aurai</span> fini - Je <span style="text-decoration: underline;">serai</span> sortie</span></strong></p>
+            </div>
+            
+            <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse pour la construction</button>
+            <div class="feedback" id="f1a">
+                <p>Réponse correcte:</p>
+                <div class="construction">
+                    <p><strong>auxiliaire AVOIR/ÊTRE au <span class="correct">futur simple</span></strong></p>
+                    <p><strong>+</strong></p>
+                    <p><strong><span class="correct">participe passé</span> du verbe à conjuguer</strong></p>
+                </div>
+            </div>
+            
+            <div class="question-text">
+                <p><strong><span class="underline">EMPLOI:</span></strong></p>
+                <p>Le <strong>futur antérieur</strong> marque l'<strong>antériorité</strong> par rapport à un <strong>futur</strong> dans une subordonnée de temps. Il s'emploie après les locutions conjonctives d'antériorité :</p>
+                <p><strong>"quand, lorsque, dès que, après que, une fois que, à peine...que."</strong></p>
+                <p><span style="color: #ff0000;"><strong>ex. </strong>Dès que j'<strong>aurai écrit</strong> ce courriel, je l'<strong>enverrai</strong>.</span></p>
+                <p><span style="color: #ff0000;">Une fois qu'elle<strong> sera rentrée</strong>, elle <strong>commencera</strong> à nettoyer</span></p>
+                
+                <p class="attention">ATTENTION : En français on emploie le futur antérieur après des conjonctions de temps comme <em>quand</em> et <em>lorsque</em> ('cuando') tandis qu'en espagnol on utilise le présent.</p>
+                <p><span style="color: #ff0000;">Quand j'aurai déjeuné, j'appellerai Victor : Cuando coma, llamaré a Victor</span></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Exercice - Conjuguez au futur antérieur</div>
+            <div class="question-text">
+                <p><strong>Mettez les verbes entre parenthèses au temps convenable:</strong></p>
+            </div>
+            
+            <p>1. Quand la cloche aura sonné, vous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (pouvoir) quitter la classe. <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button> <div class="feedback" id="f2a">Réponse correcte: <span class="correct">pourrez</span></div></p>
+            
+            <p>2. Lorsqu'Émilie <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (expliquer) son comportement, les autres élèves comprendront. <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button> <div class="feedback" id="f2b">Réponse correcte: <span class="correct">aura expliqué</span></div></p>
+            
+            <p>3. Dès que tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (lire) la notice, tu comprendras le problème. <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button> <div class="feedback" id="f2c">Réponse correcte: <span class="correct">auras lu</span></div></p>
+            
+            <p>4. Nous mangerons aussitôt que nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (faire) les courses. <button class="show-feedback" onclick="showFeedback('q2d')">Voir la réponse</button> <div class="feedback" id="f2d">Réponse correcte: <span class="correct">aurons fait</span></div></p>
+            
+            <p>5. Une fois que nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (recevoir) les colis, nous vous téléphonerons. <button class="show-feedback" onclick="showFeedback('q2e')">Voir la réponse</button> <div class="feedback" id="f2e">Réponse correcte: <span class="correct">aurons reçu</span></div></p>
+            
+            <p>6. Après que j'<input type="text" class="answer-input" placeholder="Votre réponse ici..."> (terminer) mes devoirs, tu pourras passer me voir. <button class="show-feedback" onclick="showFeedback('q2f')">Voir la réponse</button> <div class="feedback" id="f2f">Réponse correcte: <span class="correct">aurai terminé</span></div></p>
+            
+            <p>7. Je te téléphonerai aussitôt que je <input type="text" class="answer-input" placeholder="Votre réponse ici..."> (recevoir) son chèque. <button class="show-feedback" onclick="showFeedback('q2g')">Voir la réponse</button> <div class="feedback" id="f2g">Réponse correcte: <span class="correct">aurai reçu/recevrai</span></div></p>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

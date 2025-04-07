@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD1.6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>6. Adverbes et locutions adverbiales de temps (traduction esp.-fr.)</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <h2>Traduisez les phrases suivantes, en faisant bien attention aux expressions en caractères gras</h2>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">Estamos <span class="highlight">a lunes</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+            <div class="feedback" id="f1">Réponse correcte: <span class="correct">Nous sommes lundi</span></div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">Mi hija nació <span class="highlight">el 3 de julio de 1964</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+            <div class="feedback" id="f2">Réponse correcte: <span class="correct">Ma fille est née le 3 juillet 1964</span></div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">Alicante, <span class="highlight">a 15 de febrero de 2022</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+            <div class="feedback" id="f3">Réponse correcte: <span class="correct">Alicante, le 15 février 2022</span></div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">LLegaremos <span class="highlight">el próximo lunes</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+            <div class="feedback" id="f4">Réponse correcte: <span class="correct">Nous arriverons lundi prochain</span></div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">No hagas ruido, son <span class="highlight">las once de la noche</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+            <div class="feedback" id="f5">Réponse correcte: <span class="correct">Ne fais pas de bruit, il est vingt-trois heures</span></div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text"><span class="highlight">Estos últimos días</span> ha hecho un tiempo muy malo</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+            <div class="feedback" id="f6">Réponse correcte: <span class="correct">Ces derniers jours il a fait un très mauvais temps</span></div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">Nunca está en casa <span class="highlight">por las mañanas</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+            <div class="feedback" id="f7">Réponse correcte: <span class="correct">Il n'est jamais chez lui le matin</span></div>
+        </div>
+        
+        <div class="question" id="q8">
+            <div class="question-number">Question 8</div>
+            <div class="question-text"><span class="highlight">Todos los años</span> voy a esquiar, pero <span class="highlight">este año</span> me quedo en Alicante</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q8')">Voir la réponse</button>
+            <div class="feedback" id="f8">Réponse correcte: <span class="correct">Tous les ans je pars skier, mais cette année je reste à Alicante</span></div>
+        </div>
+        
+        <div class="question" id="q9">
+            <div class="question-number">Question 9</div>
+            <div class="question-text"><span class="highlight">Cada año</span> viajo a París en Navidad.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q9')">Voir la réponse</button>
+            <div class="feedback" id="f9">Réponse correcte: <span class="correct">Chaque année je voyage à Paris à Noël</span></div>
+        </div>
+        
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text"><span class="highlight">Sigue viviendo</span> en casa de sus padres</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q10')">Voir la réponse</button>
+            <div class="feedback" id="f10">Réponse correcte: <span class="correct">Il habite toujours chez ses parents</span></div>
+        </div>
+        
+        <div class="question" id="q11">
+            <div class="question-number">Question 11</div>
+            <div class="question-text"><span class="highlight">Tarde o temprano</span> acabará cediendo</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q11')">Voir la réponse</button>
+            <div class="feedback" id="f11">Réponse correcte: <span class="correct">Tôt ou tard il finira par céder</span></div>
+        </div>
+        
+        <div class="question" id="q12">
+            <div class="question-number">Question 12</div>
+            <div class="question-text">No he hecho nada <span class="highlight">en todo el día</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q12')">Voir la réponse</button>
+            <div class="feedback" id="f12">Réponse correcte: <span class="correct">Je n'ai rien fait de toute la journée</span></div>
+        </div>
+        
+        <div class="question" id="q13">
+            <div class="question-number">Question 13</div>
+            <div class="question-text">El año pasado viajaba en tren. <span class="highlight">De ahora en adelante</span> viajaré en avión.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q13')">Voir la réponse</button>
+            <div class="feedback" id="f13">Réponse correcte: <span class="correct">L'année dernière je voyageais en train. Désormais je voyagerai en avion</span></div>
+        </div>
+        
+        <div class="question" id="q14">
+            <div class="question-number">Question 14</div>
+            <div class="question-text">Hace algunos años las tiendas cerraban a las 7 de la tarde. El año pasado estos horarios cambiaron. <span class="highlight">Desde entonces</span>, las tiendas abren hasta las 8 de la tarde.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q14')">Voir la réponse</button>
+            <div class="feedback" id="f14">Réponse correcte: <span class="correct">Il y a quelques années les magasins fermaient à 19h. L'année dernière ces horaires ont changé. Désormais, les magasins restent ouverts jusqu'à 20h.</span></div>
+        </div>
+        
+        <div class="question" id="q15">
+            <div class="question-number">Question 15</div>
+            <div class="question-text"><span class="highlight">Antaño,</span> Sudán fue una colonia de Egipto.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q15')">Voir la réponse</button>
+            <div class="feedback" id="f15">Réponse correcte: <span class="correct">Jadis, Le Soudan fut une colonie de l'Egypte</span></div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.2.2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+        .construction {
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: medium;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .attention {
+            color: #d35400;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>2. Conjonctions de la cause niée : emploi et traduction</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><strong>Expressions à utiliser :</strong></p>
+                <ul>
+                    <li><em>ce n'est pas que... c'est que...</em></li>
+                    <li><em>ce n'est pas parce que... c'est que...</em></li>
+                    <li><em>non que... mais parce que...</em></li>
+                    <li><em>non parce que... mais...</em></li>
+                </ul>
+                <p>Ces expressions introduisent le subjonctif dans la partie négative et permettent d'exprimer une opposition entre deux idées.</p>
+            </div>
+            
+            <div class="question-text">
+                <p><strong>Exercice : Complétez les phrases avec les expressions appropriées et le verbe au subjonctif quand nécessaire</strong></p>
+                
+                <p>1. Si le restaurant a fermé (...) la nourriture <input type="text" class="answer-input" placeholder="être (subjonctif)"> mauvaise, (...) le service était trop lent.</p>
+                <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button>
+                <div class="feedback" id="f1a">Réponse correcte: <span class="correct">ce n'est pas que la nourriture ait été mauvaise, c'est que le service était trop lent</span></div>
+                
+                <p>2. Je ne t'ai pas appelé (...) je ne <input type="text" class="answer-input" placeholder="vouloir (subjonctif)"> pas te parler, (...) j'ai été très occupé cette semaine.</p>
+                <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button>
+                <div class="feedback" id="f1b">Réponse correcte: <span class="correct">non que je ne veuille pas te parler, mais parce que j'ai été très occupé cette semaine</span></div>
+                
+                <p>3. Il ne participe pas aux réunions (...) il ne <input type="text" class="answer-input" placeholder="savoir (subjonctif)"> pas quoi dire, (...) il est très timide.</p>
+                <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button>
+                <div class="feedback" id="f1c">Réponse correcte: <span class="correct">ce n'est pas qu'il ne sache pas quoi dire, c'est qu'il est très timide</span></div>
+                
+                <p>4. Nous n'avons pas visité ce musée (...) nous ne <input type="text" class="answer-input" placeholder="être (subjonctif)"> pas intéressés, (...) nous n'avions pas assez de temps.</p>
+                <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button>
+                <div class="feedback" id="f1d">Réponse correcte: <span class="correct">non que nous ne soyons pas intéressés, mais parce que nous n'avions pas assez de temps</span></div>
+                
+                <p>5. Elle n'a pas accepté le poste (...) le salaire ne <input type="text" class="answer-input" placeholder="être (subjonctif)"> pas suffisant, (...) elle devait déménager trop loin.</p>
+                <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button>
+                <div class="feedback" id="f1e">Réponse correcte: <span class="correct">ce n'est pas parce que le salaire ne soit pas suffisant, c'est qu'elle devait déménager trop loin</span></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2 - Traduction</div>
+            <div class="question-text">
+                <p><strong>Exercice : Traduisez les phrases suivantes en utilisant les expressions de négation avec subjonctif</strong></p>
+                
+                <p>1. No es que no me guste el cine, es que prefiero leer libros.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français..."></p>
+                <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button>
+                <div class="feedback" id="f2a">Réponse correcte: <span class="correct">Ce n'est pas que je n'aime pas le cinéma, c'est que je préfère lire des livres</span></div>
+                
+                <p>2. No porque no tenga dinero, sino porque no quiero gastarlo en eso.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français..."></p>
+                <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button>
+                <div class="feedback" id="f2b">Réponse correcte: <span class="correct">Non que je n'aie pas d'argent, mais parce que je ne veux pas le dépenser pour ça</span></div>
+                
+                <p>3. Si no ha venido no es porque no haya recibido la invitación, es que está enfermo.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français..."></p>
+                <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button>
+                <div class="feedback" id="f2c">Réponse correcte: <span class="correct">S'il n'est pas venu, ce n'est pas qu'il n'ait pas reçu l'invitation, c'est qu'il est malade</span></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

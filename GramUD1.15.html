@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.1.15</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+        .construction {
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: medium;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .attention {
+            color: #d35400;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>15. Le subjonctif (formation)</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1 - Subjonctif Présent</div>
+            <div class="question-text">
+                <p><strong>FORMATION :</strong></p>
+                <table>
+                    <tr>
+                        <th>Formation : radical + terminaisons</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>* Le radical :</strong></p>
+                            <p>- Pour <strong><em>je, tu, il/elle</em></strong> et <em><strong>ils/elles</strong></em>: radical de la 3ème personne du pluriel (<strong><em>ils/elles</em></strong>) du <strong>présent</strong> de l'indicatif.</p>
+                            <p>- Pour <strong><em>nous</em></strong> et <strong><em>vous</em></strong>: radical de la 1ère personne du pluriel (<strong><em>nous</em></strong>) du <strong>présent</strong> de l'indicatif.</p>
+                            <p><strong>* Les terminaisons:</strong> - <strong><em>e, -es, e, -ions, -iez, ent</em></strong></p>
+                            <p><strong>* Quelques verbes irréguliers:</strong> aller (<strong><em>aille</em></strong>), avoir (<em><strong>aie</strong></em>), être (<strong><em>sois</em></strong>), faire (<strong><em>fasse</em></strong>), pouvoir (<strong><em>puisse</em></strong>), savoir (<strong><em>sache</em></strong>), vouloir (<strong><em>veuille</em></strong>).</p>
+                        </td>
+                        <td>
+                            <p>- que je <strong>sorte</strong>, que tu <strong>sortes</strong>, qu'il <strong>sorte</strong>, qu'ils <strong>sortent</strong></p>
+                            <p>- que nous <strong>sortions</strong>, que vous <strong>sortiez</strong></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-text">
+                <p><strong>Exercice : À partir de l'infinitif, donnez la première personne du singulier puis la première personne du pluriel du subjonctif présent</strong></p>
+                <p>Exemple : tenir → que je tienne → que nous tenions</p>
+                
+                <p>1. écrire → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button> <div class="feedback" id="f1a">Réponse correcte: <span class="correct">que j'écrive</span> → <span class="correct">que nous écrivions</span></div></p>
+                
+                <p>2. sortir → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button> <div class="feedback" id="f1b">Réponse correcte: <span class="correct">que je sorte</span> → <span class="correct">que nous sortions</span></div></p>
+                
+                <p>3. venir → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button> <div class="feedback" id="f1c">Réponse correcte: <span class="correct">que je vienne</span> → <span class="correct">que nous venions</span></div></p>
+                
+                <p>4. arriver → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button> <div class="feedback" id="f1d">Réponse correcte: <span class="correct">que j'arrive</span> → <span class="correct">que nous arrivions</span></div></p>
+                
+                <p>5. réussir → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button> <div class="feedback" id="f1e">Réponse correcte: <span class="correct">que je réussisse</span> → <span class="correct">que nous réussissions</span></div></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2 - Subjonctif Passé</div>
+            <div class="question-text">
+                <p><strong>FORMATION :</strong></p>
+                <table>
+                    <tr>
+                        <th>Formation</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>ÊTRE</strong> ou <strong>AVOIR</strong> au subjonctif présent + participe passé</p>
+                        </td>
+                        <td>
+                            <p>- que j'<strong>aie pris</strong>, que tu <strong>aies pris</strong>, qu'il <strong>ait pris</strong>, que nous <strong>ayons pris</strong>, que vous <strong>ayez pris</strong>, qu'ils <strong>aient pris</strong></p>
+                            <p>- que je <strong>sois sorti(e)</strong>, que tu <strong>sois sorti(e)</strong>, qu'il <strong>soit sorti</strong>, que nous <strong>soyons sorti(e)s</strong>, que vous <strong>soyez sorti(e)s</strong>, qu'ils <strong>soient sortis</strong></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-text">
+                <p><strong>Exercice : À partir de l'infinitif, donnez le passé composé puis le subjonctif passé de la personne indiquée</strong></p>
+                <p>Exemple : prendre → j'ai pris → que j'aie pris</p>
+                
+                <p>1. sortir → tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button> <div class="feedback" id="f2a">Réponse correcte: <span class="correct">es sorti(e)</span> → <span class="correct">sois sorti(e)</span></div></p>
+                
+                <p>2. boire → j'<input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que j'<input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button> <div class="feedback" id="f2b">Réponse correcte: <span class="correct">ai bu</span> → <span class="correct">aie bu</span></div></p>
+                
+                <p>3. avoir → ils <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → qu'ils <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button> <div class="feedback" id="f2c">Réponse correcte: <span class="correct">ont eu</span> → <span class="correct">aient eu</span></div></p>
+                
+                <p>4. aller → vous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que vous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2d')">Voir la réponse</button> <div class="feedback" id="f2d">Réponse correcte: <span class="correct">êtes allé(e)s</span> → <span class="correct">soyez allé(e)s</span></div></p>
+                
+                <p>5. être → nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2e')">Voir la réponse</button> <div class="feedback" id="f2e">Réponse correcte: <span class="correct">avons été</span> → <span class="correct">ayons été</span></div></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3 - Subjonctif Imparfait</div>
+            <div class="question-text">
+                <p><strong>FORMATION :</strong> Ce temps est complètement abandonné dans la langue orale et ne trouve son emploi que dans la langue écrite littéraire. Il est remplacé par le présent du subjonctif.</p>
+                <table>
+                    <tr>
+                        <th>Formation : radical + terminaisons</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>- Verbes en <strong>-er</strong> : radical + <strong>-asse, -asses, -ât, -assions, -assiez, -assent</strong></p>
+                            <p>- Autres verbes : radical du passé simple + <strong>-sse, -sses, -t, -ssions, -ssiez, -ssent</strong></p>
+                            <p>À la troisième personne du singulier, la voyelle du radical prend un accent circonflexe pour distinguer les formes du subjonctif imparfait de celles du passé simple: <strong>fût, fît, eût, sût</strong>, ...</p>
+                        </td>
+                        <td>
+                            <p>- que je <strong>chantasse</strong>, que tu <strong>chantasses</strong>, qu'il <strong>chantât</strong>, que nous <strong>chantassions</strong>, que vous <strong>chantassiez</strong>, qu'ils <strong>chantassent</strong></p>
+                            <p>- que je <strong>dusse</strong>, que tu <strong>dusses</strong>, qu'il <strong>dût</strong>, que nous <strong>dussions</strong>, que vous <strong>dussiez</strong>, qu'ils <strong>dussent</strong></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-text">
+                <p><strong>Exercice : À partir de l'infinitif, donnez le subjonctif imparfait de la personne indiquée</strong></p>
+                <p>Exemple : chanter → que je chantasse</p>
+                
+                <p>1. manger → que tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q3a')">Voir la réponse</button> <div class="feedback" id="f3a">Réponse correcte: <span class="correct">mangeasses</span></div></p>
+                
+                <p>2. aller → qu'il <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q3b')">Voir la réponse</button> <div class="feedback" id="f3b">Réponse correcte: <span class="correct">allât</span></div></p>
+                
+                <p>3. avancer → que nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q3c')">Voir la réponse</button> <div class="feedback" id="f3c">Réponse correcte: <span class="correct">avançassions</span></div></p>
+                
+                <p>4. écouter → que vous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q3d')">Voir la réponse</button> <div class="feedback" id="f3d">Réponse correcte: <span class="correct">écoutassiez</span></div></p>
+                
+                <p>5. résonner → qu'ils <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q3e')">Voir la réponse</button> <div class="feedback" id="f3e">Réponse correcte: <span class="correct">résonnassent</span></div></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4 - Subjonctif Plus-que-parfait</div>
+            <div class="question-text">
+                <p><strong>FORMATION :</strong> Ce temps est complètement abandonné dans la langue orale et ne trouve son emploi que dans la langue écrite littéraire. Il est remplacé par le passé du subjonctif.</p>
+                <table>
+                    <tr>
+                        <th>Formation</th>
+                        <th>Exemples</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p><strong>ÊTRE</strong> ou <strong>AVOIR</strong> au subjonctif imparfait + participe passé</p>
+                        </td>
+                        <td>
+                            <p>- que j'<strong>eusse pris</strong>, que tu <strong>eusses pris</strong>, qu'il <strong>eût pris</strong>, que nous <strong>eussions pris</strong>, que vous <strong>eussiez pris</strong>, qu'ils <strong>eussent pris</strong></p>
+                            <p>- que je <strong>fusse sorti(e)</strong>, que tu <strong>fusses sorti(e)</strong>, qu'il <strong>fût sorti</strong>, que nous <strong>fussions sorti(e)s</strong>, que vous <strong>fussiez sorti(e)s</strong>, qu'ils <strong>fussent sortis</strong></p>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            
+            <div class="question-text">
+                <p><strong>Exercice : À partir de l'infinitif, donnez le passé composé puis le subjonctif plus-que-parfait de la personne indiquée</strong></p>
+                <p>Exemple : prendre → j'ai pris → que j'eusse pris</p>
+                
+                <p>1. sortir → tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que tu <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q4a')">Voir la réponse</button> <div class="feedback" id="f4a">Réponse correcte: <span class="correct">es sorti(e)</span> → <span class="correct">fusses sorti(e)</span></div></p>
+                
+                <p>2. boire → j'<input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que j'<input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q4b')">Voir la réponse</button> <div class="feedback" id="f4b">Réponse correcte: <span class="correct">ai bu</span> → <span class="correct">eusse bu</span></div></p>
+                
+                <p>3. avoir → ils <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → qu'ils <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q4c')">Voir la réponse</button> <div class="feedback" id="f4c">Réponse correcte: <span class="correct">ont eu</span> → <span class="correct">eussent eu</span></div></p>
+                
+                <p>4. aller → il <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → qu'il <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q4d')">Voir la réponse</button> <div class="feedback" id="f4d">Réponse correcte: <span class="correct">est allé</span> → <span class="correct">fût allé</span></div></p>
+                
+                <p>5. être → nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> → que nous <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q4e')">Voir la réponse</button> <div class="feedback" id="f4e">Réponse correcte: <span class="correct">avons été</span> → <span class="correct">eussions été</span></div></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

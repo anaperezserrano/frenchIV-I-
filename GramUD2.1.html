@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.2.1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .text-highlight {
+            background-color: #FFCF35;
+            padding: 2px 5px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            margin: 10px 0;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .reading-text {
+            font-style: italic;
+            margin: 15px 0;
+            line-height: 1.8;
+        }
+        .conjunction-example {
+            margin-left: 20px;
+            font-style: italic;
+            color: #6c757d;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. SENSIBILISATION GRAMMATICALE: Le calvaire d'un furmeur</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><span class="text-highlight">LISEZ le texte. Relevez dans le texte les conjonctions et locutions conjonctives utilisées pour exprimer la CAUSE et expliquez leur sens et emploi</span></p>
+                
+                <div class="reading-text">
+                    <p><em>LE CALVAIRE D'UN FUMEUR</em></p>
+                    <p>Il voulut s'arrêter de fumer, non qu'il en sentît précisément le besoin, mais tout simplement parce que sa femme ne supportait plus l'odeur de la fumée et le menaçait de mille maux, entre autres de le quitter.</p>
+                    <p>Depuis longtemps il se préparait à cette bataille car il savait que tôt ou tard il ne pourrait s'y soustraire; mais il ne savait pas s'il pourrait en sortir vainqueur en dépit des exhortations de plusieurs de ses amis.</p>
+                    <p>Il s'était donné des délais : « étant donné que les semaines commencent un lundi, pensait-il, il est logique que je commence un lundi car il est apparemment plus facile d'entreprendre des efforts au début de la semaine qu'à la fin ».</p>
+                    <p>Le lundi suivant, il partit au bureau sous l'emprise de ses nouvelles résolutions. Comme tous les matins depuis dix ans, sa secrétaire lui apporta le courrier ; étant donné sa réputation de fumeur invétéré, elle l'accompagna comme à l'ordinaire d'un paquet de cigarettes neuf et d'un cendrier, car elle déplorait chez lui la fâcheuse habitude de jeter ses mégots par terre.</p>
+                    <p>« Ah non, Virginie, pas aujourd'hui. J'ai pris la résolution de ne plus fumer, étant donné que ma femme ne peut plus supporter mon odeur de tabac froid et me repousse chaque fois qu'elle voit mes doigts jaunis de nicotine. Cette fois-ci je m'y tiendrai».</p>
+                    <p>Comme la secrétaire le connaissait bien et qu'elle savait que la même scène se reproduisait régulièrement, elle se retira en silence en dissimulant un léger sourire : elle enferma soigneusement dans son tiroir le paquet de cigarettes.</p>
+                </div>
+                
+                <textarea class="answer-input" placeholder="Listez les conjonctions ici..." rows="5"></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Conjonctions et locutions conjonctives de cause trouvées dans le texte :</p>
+                    <ul>
+                        <li>non que... mais (parce que)</li>
+                        <li>parce que</li>
+                        <li>car</li>
+                        <li>étant donné (que)</li>
+                        <li>comme</li>
+                        <li>sous prétexte que</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p><strong>La plupart des locutions qui expriment la CAUSE sont suivies de :</strong></p>
+                <div>
+                    <input type="radio" name="q2" id="q2a"><label for="q2a">a. SUBJONCTIF</label><br>
+                    <input type="radio" name="q2" id="q2b"><label for="q2b">b. INDICATIF</label>
+                </div>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    Réponse correcte: <span class="correct">b. INDICATIF</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p><strong>Les locutions conjonctives "non que ... mais (parce que)", "non pas que... mais (parce que)" et "ce n'est pas que... mais c'est que" sont suivies de :</strong></p>
+                <div>
+                    <input type="radio" name="q3" id="q3a"><label for="q3a">a. SUBJONCTIF</label><br>
+                    <input type="radio" name="q3" id="q3b"><label for="q3b">b. INDICATIF</label>
+                </div>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    Réponse correcte: <span class="correct">a. SUBJONCTIF</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p><strong>Entre ces deux phrases, y a-t-il une différence d'emploi (formelle) et de sens? Expliquez-la.</strong></p>
+                <p class="conjunction-example">- Il voulut s'arrêter de fumer, <strong>non qu'il</strong> en <strong>sentît</strong> précisément le besoin, <strong>mais</strong> tout simplement <strong>parce que</strong> sa femme ne supportait plus l'odeur de la fumée.</p>
+                <p class="conjunction-example">- J'aime bien les patates douces <strong>non pas parce que</strong> ce <strong>sont</strong> des patates <strong>mais parce</strong> qu'elles sont douces.</p>
+                
+                <textarea class="answer-input" placeholder="Votre explication ici..." rows="5"></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p><strong>Différence d'emploi et de sens :</strong></p>
+                    <p>1. <strong>Non que + SUBJONCTIF ; (si)… ce n'est pas que + SUBJ. :</strong><br>
+                    La première phrase utilise le subjonctif. La cause est niée, contestée, rejetée. Ce qui explique le mode du verbe : SUBJONCTIF.</p>
+                    
+                    <p>2. <strong>Non pas parce que + IND. ; (si)… ce n'est pas parce que + INDI. :</strong><br>
+                    La deuxième phrase utilise l'indicatif. Bien que la cause soit également niée, la présence de "parce que" impose l'indicatif en français (contrairement à l'espagnol où on utiliserait le subjonctif après "no porque").</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p><strong>Connaissez-vous une autre locution conjonctive de cause qui s'emploie avec le subjonctif ?</strong></p>
+                <input type="text" class="answer-input" placeholder="Votre réponse ici...">
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    Réponse correcte: <span class="correct">Soit que... + SUBJ. (soit que... + SUBJ.)</span>
+                    <p>Cette locution conjonctive exprime la cause supposée. On ne connaît pas la vraie raison, donc on envisage des raisons possibles qui peuvent être vraies ou non, ce qui explique l'usage du subjonctif.</p>
+                    <p>Exemple : <em>Il voul  ut s'arrêter de fumer, soit qu'il en sentît le besoin, soit que sa femme ne supportât l'odeur de la fumée.</em></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

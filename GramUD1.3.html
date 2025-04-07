@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.1.3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .question {
+            margin-bottom: 30px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            border-left: 4px solid #3498db;
+        }
+        .options {
+            margin-top: 10px;
+        }
+        .option {
+            margin: 8px 0;
+            padding: 8px;
+            background-color: #f0f0f0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .option:hover {
+            background-color: #e0e0e0;
+        }
+        .correct {
+            background-color: #d4edda;
+            border-left: 4px solid #28a745;
+        }
+        .incorrect {
+            background-color: #f8d7da;
+            border-left: 4px solid #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .correct-feedback {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .incorrect-feedback {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .show-answer {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        .show-answer:hover {
+            background-color: #2980b9;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .controls {
+            margin: 20px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>3. An/Année, Jour/Journée, etc.</h1>
+    
+    <div class="controls">
+        <button onclick="showAllAnswers()">Afficher toutes les réponses</button>
+        <button onclick="hideAllAnswers()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question" id="q1">
+        <div class="question-number">Question 1</div>
+        <p><strong>Aujourd'hui, il a fait ...... magnifique</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q1', 'a')">a. une journée</div>
+            <div class="option" onclick="checkAnswer(this, 'q1', 'b')">b. un jour</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q1">
+            Réponse correcte: <strong>a. une journée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q1')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q3">
+        <div class="question-number">Question 2</div>
+        <p><strong>................, il a fait très doux pour la saison</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q3', 'a')">a. Ces derniers jours</div>
+            <div class="option" onclick="checkAnswer(this, 'q3', 'b')">b. Ces dernières journées</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q3">
+            Réponse correcte: <strong>a. Ces derniers jours</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q3')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q5">
+        <div class="question-number">Question 3</div>
+        <p><strong>Elle travaille .... et nuit!</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q5', 'a')">a. journée</div>
+            <div class="option" onclick="checkAnswer(this, 'q5', 'b')">b. jour</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q5">
+            Réponse correcte: <strong>b. jour</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q5')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q7">
+        <div class="question-number">Question 4</div>
+        <p><strong>Parfois même il passe ........... chez sa mère</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q7', 'a')">a. toute la journée</div>
+            <div class="option" onclick="checkAnswer(this, 'q7', 'b')">b. tout le jour</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q7">
+            Réponse correcte: <strong>a. toute la journée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q7')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q9">
+        <div class="question-number">Question 5</div>
+        <p><strong>Le samedi ............., les écoles primaires sont ouvertes</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q9', 'a')">a. matinée</div>
+            <div class="option" onclick="checkAnswer(this, 'q9', 'b')">b. matin</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q9">
+            Réponse correcte: <strong>b. matin</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q9')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q11">
+        <div class="question-number">Question 6</div>
+        <p><strong>Je vois le médecin ......</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q11', 'a')">a. cette matinée</div>
+            <div class="option" onclick="checkAnswer(this, 'q11', 'b')">b. ce matin</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q11">
+            Réponse correcte: <strong>b. ce matin</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q11')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q13">
+        <div class="question-number">Question 7</div>
+        <p><strong>Il n'a pas cessé de pleuvoir ..................</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q13', 'a')">a. du matin</div>
+            <div class="option" onclick="checkAnswer(this, 'q13', 'b')">b. de la matinée</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q13">
+            Réponse correcte: <strong>b. de la matinée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q13')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q15">
+        <div class="question-number">Question 8</div>
+        <p><strong>Je resterai ..... chez mes amis. Je reviendrai à midi.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q15', 'a')">a. toute la matinée</div>
+            <div class="option" onclick="checkAnswer(this, 'q15', 'b')">b. tout le matin</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q15">
+            Réponse correcte: <strong>a. toute la matinée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q15')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q17">
+        <div class="question-number">Question 9</div>
+        <p><strong>....................., aimeriez-vous faire une partie de cartes?</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q17', 'a')">a. cette soirée</div>
+            <div class="option" onclick="checkAnswer(this, 'q17', 'b')">b. ce soir</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q17">
+            Réponse correcte: <strong>b. ce soir</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q17')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q19">
+        <div class="question-number">Question 10</div>
+        <p><strong>Ont-ils passé ................. chez leurs enfants?</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q19', 'a')">a. le soir</div>
+            <div class="option" onclick="checkAnswer(this, 'q19', 'b')">b. la soirée</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q19">
+            Réponse correcte: <strong>b. la soirée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q19')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q21">
+        <div class="question-number">Question 11</div>
+        <p><strong>Je vais ...... chez mes amis.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q21', 'a')">a. tous les soirs</div>
+            <div class="option" onclick="checkAnswer(this, 'q21', 'b')">b. toutes les soirées</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q21">
+            Réponse correcte: <strong>a. tous les soirs</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q21')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q23">
+        <div class="question-number">Question 12</div>
+        <p><strong>Antoine aura douze .......... en avril prochain</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q23', 'a')">a. ans</div>
+            <div class="option" onclick="checkAnswer(this, 'q23', 'b')">b. années</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q23">
+            Réponse correcte: <strong>a. ans</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q23')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q25">
+        <div class="question-number">Question 13</div>
+        <p><strong>Leur fille est admise en deuxième ....... en avril prochain</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q25', 'a')">a. an</div>
+            <div class="option" onclick="checkAnswer(this, 'q25', 'b')">b. année</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q25">
+            Réponse correcte: <strong>b. année</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q25')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q27">
+        <div class="question-number">Question 14</div>
+        <p><strong>Yves entre .............. en apprentissage chez un décorateur</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q27', 'a')">a. cette année</div>
+            <div class="option" onclick="checkAnswer(this, 'q27', 'b')">b. cet an</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q27">
+            Réponse correcte: <strong>a. cette année</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q27')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q29">
+        <div class="question-number">Question 15</div>
+        <p><strong>Chaque ................, je vais à Paris pendant les vacances de Noël.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q29', 'a')">a. année</div>
+            <div class="option" onclick="checkAnswer(this, 'q29', 'b')">b. an</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q29">
+            Réponse correcte: <strong>a. année</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q29')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q31">
+        <div class="question-number">Question 16</div>
+        <p><strong>........................., j'ai étudié en France.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q31', 'a', true)">a. l'an dernier</div>
+            <div class="option" onclick="checkAnswer(this, 'q31', 'b', true)">b. l'année dernière</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q31">
+            Réponses correctes: <strong>a. l'an dernier</strong> et <strong>b. l'année dernière</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q31')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q33">
+        <div class="question-number">Question 17</div>
+        <p><strong>............................, je serai en Italie.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q33', 'a')">a. l'an prochain</div>
+            <div class="option" onclick="checkAnswer(this, 'q33', 'b')">b. l'année prochaine</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q33">
+            Réponse correcte: <strong>b. l'année prochaine</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q33')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q35">
+        <div class="question-number">Question 18</div>
+        <p><strong>.......... j'irai en Italie.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q35', 'a')">a. L'an prochain</div>
+            <div class="option" onclick="checkAnswer(this, 'q35', 'b')">b. L'année prochaine</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q35">
+            Réponse correcte: <strong>a. L'an prochain</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q35')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q37">
+        <div class="question-number">Question 19</div>
+        <p><strong>................................ se fête dans le monde entier.</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q37', 'a')">a. le nouvel an</div>
+            <div class="option" onclick="checkAnswer(this, 'q37', 'b')">b. la nouvelle année</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q37">
+            Réponse correcte: <strong>a. le nouvel an</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q37')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q39">
+        <div class="question-number">Question 20</div>
+        <p><strong>Nous vous souhaitons de bonnes vacances et ......................</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q39', 'a')">a. un bon nouvel an</div>
+            <div class="option" onclick="checkAnswer(this, 'q39', 'b')">b. une bonne nouvelle année</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q39">
+            Réponse correcte: <strong>b. une bonne nouvelle année</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q39')">Voir la réponse</button>
+    </div>
+    
+    <div class="question" id="q41">
+        <div class="question-number">Question 21</div>
+        <p><strong>L1: Au revoir Claude, .....................!<br>L2: .................. à toi aussi, au revoir!</strong></p>
+        <div class="options">
+            <div class="option" onclick="checkAnswer(this, 'q41', 'a')">a. bon soir</div>
+            <div class="option" onclick="checkAnswer(this, 'q41', 'b')">b. bonne soirée</div>
+        </div>
+        <div class="feedback correct-feedback" id="feedback-q41">
+            Réponse correcte: <strong>b. bonne soirée</strong>
+        </div>
+        <button class="show-answer" onclick="showAnswer('q41')">Voir la réponse</button>
+    </div>
+    
+    <script>
+        function checkAnswer(element, questionId, selectedOption, isMultipleCorrect = false) {
+            const feedback = document.getElementById(`feedback-${questionId}`);
+            const options = document.querySelectorAll(`#${questionId} .option`);
+            
+            // Reset all options
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+            
+            // Mark selected option
+            if (isMultipleCorrect) {
+                // For questions with multiple correct answers (like Q31)
+                if (selectedOption === 'a' || selectedOption === 'b') {
+                    element.classList.add('correct');
+                    feedback.style.display = 'block';
+                }
+            } else {
+                // For questions with single correct answer
+                const correctOption = feedback.textContent.match(/[ab]\./)[0].charAt(0);
+                
+                if (selectedOption === correctOption) {
+                    element.classList.add('correct');
+                } else {
+                    element.classList.add('incorrect');
+                    // Also show the correct option
+                    const correctElement = options[correctOption === 'a' ? 0 : 1];
+                    correctElement.classList.add('correct');
+                }
+                feedback.style.display = 'block';
+            }
+        }
+        
+        function showAnswer(questionId) {
+            const feedback = document.getElementById(`feedback-${questionId}`);
+            const options = document.querySelectorAll(`#${questionId} .option`);
+            const correctOptionText = feedback.textContent.match(/[ab]\./)[0].charAt(0);
+            
+            // Reset all options
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+            
+            // Mark correct option(s)
+            if (questionId === 'q31') {
+                // Special case for question 31 with multiple correct answers
+                options[0].classList.add('correct');
+                options[1].classList.add('correct');
+            } else {
+                const correctElement = options[correctOptionText === 'a' ? 0 : 1];
+                correctElement.classList.add('correct');
+            }
+            
+            feedback.style.display = 'block';
+        }
+        
+        function showAllAnswers() {
+            const questions = document.querySelectorAll('.question');
+            questions.forEach(q => {
+                const id = q.id;
+                showAnswer(id);
+            });
+        }
+        
+        function hideAllAnswers() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            const options = document.querySelectorAll('.option');
+            
+            feedbacks.forEach(fb => {
+                fb.style.display = 'none';
+            });
+            
+            options.forEach(opt => {
+                opt.classList.remove('correct', 'incorrect');
+            });
+        }
+    </script>
+</body>
+</html>

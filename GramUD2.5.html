@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectores de Causa en Francés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .connectors-list {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .connectors-list ul {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Conectores de Causa en Francés</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="connectors-list">
+            <p><strong>Conectores a utilizar:</strong></p>
+            <ul>
+                <li><em>comme</em> (información nueva)</li>
+                <li><em>étant donné que</em> (conocimiento compartido)</li>
+                <li><em>parce que</em> (información nueva)</li>
+                <li><em>puisque</em> (conocimiento compartido)</li>
+                <li><em>sous prétexte que</em> (causa cuestionada)</li>
+                <li><em>vu que</em> (conocimiento compartido)</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Ejercicio 1 - Completar frases</div>
+            <div class="question-text">
+                <p><strong>Complete las siguientes frases con el conector de causa adecuado:</strong></p>
+                
+                <p>1. Pourquoi arrives-tu en retard ? .................... je n'ai pas entendu sonner mon réveil.</p>
+                <input type="text" class="answer-input" placeholder="Escriba el conector...">
+                <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button>
+                <div class="feedback" id="f1a">Réponse correcte: <span class="correct">parce que</span> (información nueva)</div>
+                
+                <p>2. .................... tu es si intelligent, explique-le lui toi-même.</p>
+                <input type="text" class="answer-input" placeholder="Escriba el conector...">
+                <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button>
+                <div class="feedback" id="f1b">Réponse correcte: <span class="correct">Puisque/Étant donné que/Vu que</span> (conocimiento compartido)</div>
+                
+                <p>3. Il s'est dispensé de venir au cours .................... sa grand-mère était mourante.</p>
+                <input type="text" class="answer-input" placeholder="Escriba el conector...">
+                <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button>
+                <div class="feedback" id="f1c">Réponse correcte: <span class="correct">sous prétexte que</span> (causa cuestionada)</div>
+                
+                <p>4. .................... je pars une semaine plus tôt que prévu, je n'aurai pas le temps d'aller te rendre visite.</p>
+                <input type="text" class="answer-input" placeholder="Escriba el conector...">
+                <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button>
+                <div class="feedback" id="f1d">Réponse correcte: <span class="correct">Comme</span> (información nueva)</div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Ejercicio 2 - Traducción</div>
+            <div class="question-text">
+                <p><strong>Traduzca las siguientes frases al español:</strong></p>
+                
+                <p>1. Pourquoi arrives-tu en retard ? Parce que je n'ai pas entendu sonner mon réveil.</p>
+                <input type="text" class="answer-input" placeholder="Traducción al español...">
+                <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button>
+                <div class="feedback" id="f2a">Réponse correcte: <span class="correct">¿Por qué llegas tarde? Porque no he oído sonar el despertador.</span></div>
+                
+                <p>2. Puisque tu es si intelligent, explique-le lui toi-même.</p>
+                <input type="text" class="answer-input" placeholder="Traducción al español...">
+                <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button>
+                <div class="feedback" id="f2b">Réponse correcte: <span class="correct">Ya que eres tan inteligente, explícaselo tú mismo.</span></div>
+                
+                <p>3. Il s'est dispensé de venir au cours sous prétexte que sa grand-mère était mourante.</p>
+                <input type="text" class="answer-input" placeholder="Traducción al español...">
+                <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button>
+                <div class="feedback" id="f2c">Réponse correcte: <span class="correct">Se libró de venir a clase con el pretexto de que su abuela estaba moribunda.</span></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Ejercicio 3 - Elección del conector adecuado</div>
+            <div class="question-text">
+                <p><strong>Seleccione el conector más apropiado para cada situación:</strong></p>
+                
+                <p>1. Situación: Explicar una razón objetiva por primera vez.<br>
+                <input type="text" class="answer-input" placeholder="Conector más adecuado...">
+                <button class="show-feedback" onclick="showFeedback('q3a')">Voir la réponse</button>
+                <div class="feedback" id="f3a">Réponse correcte: <span class="correct">parce que</span> (información nueva)</div>
+                
+                <p>2. Situación: Dar una razón que todos conocen para argumentar.<br>
+                <input type="text" class="answer-input" placeholder="Conector más adecuado...">
+                <button class="show-feedback" onclick="showFeedback('q3b')">Voir la réponse</button>
+                <div class="feedback" id="f3b">Réponse correcte: <span class="correct">puisque/étant donné que/vu que</span> (conocimiento compartido)</div>
+                
+                <p>3. Situación: Expresar una razón que no crees que sea verdadera.<br>
+                <input type="text" class="answer-input" placeholder="Conector más adecuado...">
+                <button class="show-feedback" onclick="showFeedback('q3c')">Voir la réponse</button>
+                <div class="feedback" id="f3c">Réponse correcte: <span class="correct">sous prétexte que</span> (causa cuestionada)</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

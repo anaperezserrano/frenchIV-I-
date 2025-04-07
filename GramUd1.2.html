@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> UD1.2 </title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-left: 4px solid #2ecc71;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+    <h1>2. Le jour, la date, l'heure (révision: emploi et traduction)</h1>
+    
+    <div class="question">
+        <h2>Question 1: Complétez en traduisant l'expression de temps</h2>
+        
+        <p>1. Estamos a martes = Nous sommes /On est </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">mardi</span></div>
+        
+        <p>2. Estamos a martes 4 = Nous sommes /On est</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">le mardi 4</span></div>
+        
+        <p>3. Estamos a martes 4 de febrero = Nous sommes /On est </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">(le) mardi 4 février</span></div>
+        
+        <p>4. Estamos a martes 4 de febrero de 2025 = Nous sommes/On est </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">le (mardi) 4 février 2025</span></div>
+        
+        <p>5. Estamos a principios de mes = Nous sommes /On est </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">au début du mois</span></div>
+        
+        <p>6. Estamos a principios de febrero = Nous sommes /On est </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">début février</span></div>
+        
+        <p>7. A mediados de abril tendremos el control de la UD1 y la UD2= ... on aura le contrôle de l´UD1 et de l'UD2</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">(À la) mi-avril</span></div>
+        
+        <p>8. Alicante, a 4 de febrero de 2025 = Alicante, </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">le 4 février 2025</span></div>
+        
+        <p>9. Son las dos en punto = </p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">il est deux heures précises /pile</span></div>
+        
+        <p>10. ¿Estás libre el viernes? No, los viernes, voy a clase de natación. = Tu es libre ... ? Non, ... je prends des cours de natation.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">vendredi</span> et <span class="correct">le vendredi</span></div>
+        
+        <p>11. El martes pasado tuvimos clase. = ... nous avons eu cours.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">Mardi dernier</span></div>
+        
+        <p>12. Por la mañana no tenemos clase. Por la tarde acabamos a las nueve. = ... nous n´avons pas cours. ... on fini à 21h.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">Le matin</span> et <span class="correct">Le soir</span></div>
+        
+        <p>13. Me despierto de madrugada = Je me réveille ...</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">au petit matin</span></div>
+        
+        <p>14. Me levanto al almanecer = je me lève ...</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">au lever du jour</span></div>
+        
+        <p>15. Me acuesto al atardecer = je me couche ...</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">au crépuscule</span></div>
+    </div>
+    
+    <div class="question">
+        <h2>Question 2: Complétez par un déterminant lorsque c'est nécessaire</h2>
+        
+        <p>1. ... jour de ... Toussaint, les Français se rendent traditionnellement au cimetière.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponses correctes: <span class="correct">Le</span> et <span class="correct">la</span></div>
+        
+        <p>2. Pour .. Pâques, ils sont partis sur la côte basque.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">∅</span> (pas de déterminant)</div>
+        
+        <p>3. Pour ... pont de ... Ascension, il y a toujours beaucoup de monde sur les routes.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponses correctes: <span class="correct">le</span> et <span class="correct">l'</span></div>
+        
+        <p>4. Pendant ... nuit de ... Saint-Jean, on allumait un grand feu dans les villages.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponses correctes: <span class="correct">la</span> et <span class="correct">la</span></div>
+        
+        <p>5. J'ai déjeuné avec ta soeur ... lundi dernier.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">∅</span></div>
+        
+        <p>6. ... vendredi soir, nous avons invité les Piquart.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">∅</span></div>
+        
+        <p>7. ... année dernière, l´été a été particulièrement chaud.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponse correcte: <span class="correct">L'</span></div>
+        
+        <p>8. ... 1995 fut ... année exceptionnelle pour la chaleur.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponses correctes: <span class="correct">∅</span> et <span class="correct">une</span></div>
+        
+
+        <p>9. Nous avons passé ... semaine au Québec, ... première semaine de ... mai.</p>
+        <button onclick="showAnswer(this)">Voir réponse</button>
+        <div class="answer">Réponses correctes: <span class="correct">une</span>, <span class="correct">la</span> et <span class="correct">∅</span></div>
+    </div>
+    
+    <script>
+        function showAnswer(button) {
+            const answerDiv = button.nextElementSibling;
+            if (answerDiv.style.display === "block") {
+                answerDiv.style.display = "none";
+                button.textContent = "Voir réponse";
+            } else {
+                answerDiv.style.display = "block";
+                button.textContent = "Cacher réponse";
+            }
+        }
+        
+        // Optionally add a function to show all answers
+        function showAllAnswers() {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                const answerDiv = button.nextElementSibling;
+                answerDiv.style.display = "block";
+                button.textContent = "Cacher réponse";
+            });
+        }
+        
+        // And another to hide all answers
+        function hideAllAnswers() {
+            const buttons = document.querySelectorAll('button');
+            buttons.forEach(button => {
+                const answerDiv = button.nextElementSibling;
+                answerDiv.style.display = "none";
+                button.textContent = "Voir réponse";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones de Causa en Francés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .expressions-list {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .expressions-list ul {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expresiones de Causa en Francés</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="expressions-list">
+            <p><strong>Expresiones a utilizar:</strong></p>
+            <ul>
+                <li><em>à cause de</em> (causa negativa)</li>
+                <li><em>grâce à</em> (causa positiva)</li>
+                <li><em>faute de</em> (falta de algo)</li>
+                <li><em>à force de</em> (repetición)</li>
+                <li><em>par</em> (para medios o motivos)</li>
+                <li><em>pour</em> (para objetivos o razones)</li>
+                <li><em>en raison de</em> (razón formal)</li>
+                <li><em>du fait de</em> (hecho constatado)</li>
+                <li><em>sous prétexte de</em> (excusa)</li>
+                <li><em>vu</em> (considerando)</li>
+                <li><em>étant donné</em> (dado que)</li>
+                <li><em>compte tenu de</em> (teniendo en cuenta)</li>
+            </ul>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Exercice 1 - Traduction</div>
+            <div class="question-text">
+                <p><strong>Traduisez les phrases suivantes de l'espagnol au français :</strong></p>
+                
+                <p>1. Mi madre lloró de felicidad cuando supo que estaba embarazada.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français...">
+                <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button>
+                <div class="feedback" id="f1a">Réponse correcte: <span class="correct">Ma mère pleura de bonheur quand elle sut que j'étais enceinte</span></div></p>
+                
+                <p>2. Estoy muy orgulloso por aprobar el examen.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français...">
+                <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button>
+                <div class="feedback" id="f1b">Réponse correcte: <span class="correct">Je suis très fier d'avoir réussi l'examen</span></div></p>
+                
+                <p>3. Lo han condenado por el robo de un coche.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français...">
+                <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button>
+                <div class="feedback" id="f1c">Réponse correcte: <span class="correct">Il a été condamné pour un vol de voiture</span></div></p>
+                
+                <p>4. Se ha casado con ella por amor.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français...">
+                <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button>
+                <div class="feedback" id="f1d">Réponse correcte: <span class="correct">Il l'a épousée par amour</span></div></p>
+                
+                <p>5. Si estoy tan sano es gracias a tus cuidados.<br>
+                <input type="text" class="answer-input" placeholder="Traduction en français...">
+                <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button>
+                <div class="feedback" id="f1e">Réponse correcte: <span class="correct">Si je suis en aussi bonne santé c'est grâce à tes soins</span></div></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Exercice 2 - Compléter les phrases</div>
+            <div class="question-text">
+                <p><strong>Complétez les phrases avec l'expression de cause appropriée :</strong></p>
+                
+                <p>1. <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="grace">Grâce à</option>
+                    <option value="cause">À cause de</option>
+                    <option value="fait">Du fait de</option>
+                </select> la canicule, il est recommandé aux personnes âgées de passer quelques heures par jour dans un endroit climatisé.</p>
+                <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button>
+                <div class="feedback" id="f2a">Réponse correcte: <span class="correct">En raison de</span></div>
+                
+                <p>2. Le voleur s'approchait de ses victimes <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="pretexte">sous prétexte de</option>
+                    <option value="force">à force de</option>
+                    <option value="faute">faute de</option>
+                </select> leur demander un renseignement.</p>
+                <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button>
+                <div class="feedback" id="f2b">Réponse correcte: <span class="correct">sous prétexte de</span></div>
+                
+                <p>3. <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="donne">Étant donné</option>
+                    <option value="vu">Vu</option>
+                    <option value="compte">Compte tenu de</option>
+                </select> la récente multiplication des radars sur les routes, les automobilistes roulent désormais moins vite.</p>
+                <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button>
+                <div class="feedback" id="f2c">Réponse correcte: <span class="correct">Étant donné</span></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Exercice 3 - Associer les expressions</div>
+            <div class="question-text">
+                <p><strong>Associez chaque expression française à sa traduction espagnole :</strong></p>
+                
+                <p>1. À force de patience <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">Por falta de paciencia</option>
+                    <option value="2">A fuerza de paciencia</option>
+                    <option value="3">Por culpa de la paciencia</option>
+                </select></p>
+                
+                <p>2. Faute de preuves <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">Por culpa de las pruebas</option>
+                    <option value="2">A falta de pruebas</option>
+                    <option value="3">Gracias a las pruebas</option>
+                </select></p>
+                
+                <p>3. Sous prétexte de maladie <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">A causa de la enfermedad</option>
+                    <option value="2">Con el pretexto de enfermedad</option>
+                    <option value="3">Por enfermedad</option>
+                </select></p>
+                
+                <p>4. Vu les circonstances <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">Vistas las circunstancias</option>
+                    <option value="2">Debido a las circunstancias</option>
+                    <option value="3">Por las circunstancias</option>
+                </select></p>
+                
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir les réponses</button>
+                <div class="feedback" id="f3">
+                    <p>Réponses correctes :</p>
+                    <ul>
+                        <li>1. <span class="correct">A fuerza de paciencia</span></li>
+                        <li>2. <span class="correct">A falta de pruebas</span></li>
+                        <li>3. <span class="correct">Con el pretexto de enfermedad</span></li>
+                        <li>4. <span class="correct">Vistas las circunstancias</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

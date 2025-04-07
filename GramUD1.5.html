@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD1.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        select {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            margin-left: 10px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .radio-options {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>5. Adverbes et locutions adverbiales de temps</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <h2>Retrouvez le synonyme de l'adverbe ou locution adverbiale en caractères gras</h2>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text"><strong>Jadis,</strong> les gens voyageaient moins</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-a" value="a">
+                    <label for="q1-a">a. autrefois</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-b" value="b">
+                    <label for="q1-b">b. de nos jours</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-c" value="c">
+                    <label for="q1-c">c. Naguère</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+            <div class="feedback" id="f1">Réponse correcte: <span class="correct">a. autrefois</span></div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">Le long de la route, notre conducteur nous dit avoir <strong>naguère</strong> rencontré un ours, le matin, dans la vallée d'Ossau.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2-a" value="a">
+                    <label for="q2-a">a. il y a longtemps</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2-b" value="b">
+                    <label for="q2-b">b. récemment</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2-c" value="c">
+                    <label for="q2-c">c. jadis</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+            <div class="feedback" id="f2">Réponse correcte: <span class="correct">b. récemment</span></div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text"><strong>Pas plus tard qu'hier</strong> mon neveu voulait devenir médecin, maintenant il préfère devenir astronaute.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3-a" value="a">
+                    <label for="q3-a">a. tout récemment</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3-b" value="b">
+                    <label for="q3-b">b. avant-hier</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3-c" value="c">
+                    <label for="q3-c">c. il y a longtemps</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+            <div class="feedback" id="f3">Réponse correcte: <span class="correct">a. tout récemment</span></div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">En 1983, mon père travaillait à Nice et nous habitions <strong>alors</strong> près de la gare.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-a" value="a">
+                    <label for="q4-a">a. à ce moment-là</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-b" value="b">
+                    <label for="q4-b">b. à ce moment-ci</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-c" value="c">
+                    <label for="q4-c">c. à cette époque-ci</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+            <div class="feedback" id="f4">Réponse correcte: <span class="correct">a. à ce moment-là</span></div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text"><strong>Dorénavant</strong>, j'essaierai d'être moins distrait.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5-a" value="a">
+                    <label for="q5-a">a. Déjà</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5-b" value="b">
+                    <label for="q5-b">b. À l'avenir</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5-c" value="c">
+                    <label for="q5-c">c. En avance</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+            <div class="feedback" id="f5">Réponse correcte: <span class="correct">b. À l'avenir</span></div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text"><strong>Désormais</strong>, les magasins resteront ouverts jusqu'à 20h.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6-a" value="a">
+                    <label for="q6-a">a. autrefois</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6-b" value="b">
+                    <label for="q6-b">b. dorénavant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6-c" value="c">
+                    <label for="q6-c">c. aussitôt</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+            <div class="feedback" id="f6">Réponse correcte: <span class="correct">b. dorénavant</span></div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text"><strong>Sitôt</strong> leur café avalé, ils enfilèrent leur manteau et partirent.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-a" value="a">
+                    <label for="q7-a">a. une fois</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-b" value="b">
+                    <label for="q7-b">b. avant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-c" value="c">
+                    <label for="q7-c">c. dès</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+            <div class="feedback" id="f7">Réponse correcte: <span class="correct">a. une fois</span></div>
+        </div>
+        
+        <div class="question" id="q8">
+            <div class="question-number">Question 8</div>
+            <div class="question-text">Il doit partir aux Etats-Unis <strong>sous peu</strong>.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q8" id="q8-a" value="a">
+                    <label for="q8-a">a. aussitôt</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q8" id="q8-b" value="b">
+                    <label for="q8-b">b. vite</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q8" id="q8-c" value="c">
+                    <label for="q8-c">c. bientôt</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q8')">Voir la réponse</button>
+            <div class="feedback" id="f8">Réponse correcte: <span class="correct">c. bientôt</span></div>
+        </div>
+        
+        <div class="question" id="q9">
+            <div class="question-number">Question 9</div>
+            <div class="question-text"><strong>Tout à coup</strong>, un violent orage éclata.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-a" value="a">
+                    <label for="q9-a">a. subitement</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-b" value="b">
+                    <label for="q9-b">b. auparavant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-c" value="c">
+                    <label for="q9-c">c. d'un seul coup</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q9')">Voir la réponse</button>
+            <div class="feedback" id="f9">Réponse correcte: <span class="correct">a. subitement</span></div>
+        </div>
+        
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text">Les français veulent aborder la Provence ou la Côte d'Azur par l'arrière-pays, puis repartir <strong>le temps d'un coup d'aile</strong> vers Paris.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-a" value="a">
+                    <label for="q10-a">a. en un clin d'œil</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-b" value="b">
+                    <label for="q10-b">b. en même temps</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-c" value="c">
+                    <label for="q10-c">c. sous peu</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q10')">Voir la réponse</button>
+            <div class="feedback" id="f10">Réponse correcte: <span class="correct">a. en un clin d'œil</span></div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

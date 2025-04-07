@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traduction des expressions de temps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>Traduction des expressions de temps (espagnol-français)</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <h2>Traduisez les phrases suivantes en faisant bien attention aux expressions de temps</h2>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">La poesía española adoptó el endecasílabo <span class="highlight">en el Renacimiento</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+            <div class="feedback" id="f1">Réponse correcte: <span class="correct">La poésie espagnole adopta l'hendécasyllabe à la Renaissance</span></div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">Las guerras nunca fueron tan crueles como <span class="highlight">en el siglo XX</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+            <div class="feedback" id="f2">Réponse correcte: <span class="correct">Les guerres ne furent jamais aussi cruelles qu'au XXe siècle</span></div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">Me gusta París <span class="highlight">en otoño</span> y <span class="highlight">en primavera</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+            <div class="feedback" id="f3">Réponse correcte: <span class="correct">J'aime Paris en automne et au printemps</span></div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">Volvió a casa <span class="highlight">alrededor de las dos</span>.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+            <div class="feedback" id="f4">Réponse correcte: <span class="correct">Elle est rentrée chez elle vers (les) deux heures</span></div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">Los lunes trabajo <span class="highlight">alrededor de cinco horas.</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+            <div class="feedback" id="f5">Réponse correcte: <span class="correct">Le lundi je travaille cinq heures environ</span></div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">Me voy a Londres <span class="highlight">para tres semanas</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+            <div class="feedback" id="f6">Réponse correcte: <span class="correct">Je serai à Londres pour trois semaines</span></div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">He estado <span class="highlight">tres semanas</span> en París.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+            <div class="feedback" id="f7">Réponse correcte: <span class="correct">Je suis restée trois semaines à Paris</span></div>
+        </div>
+        
+        <div class="question" id="q8">
+            <div class="question-number">Question 8</div>
+            <div class="question-text">Me ducharé <span class="highlight">en diez minutos</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q8')">Voir la réponse</button>
+            <div class="feedback" id="f8">Réponse correcte: <span class="correct">Je me douche en dix minutes</span></div>
+        </div>
+        
+        <div class="question" id="q9">
+            <div class="question-number">Question 9</div>
+            <div class="question-text">LLegaré a tu casa <span class="highlight">dentro de dos horas</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q9')">Voir la réponse</button>
+            <div class="feedback" id="f9">Réponse correcte: <span class="correct">Je serai chez toi dans deux heures</span></div>
+        </div>
+        
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text">Tengo un nuevo trabajo <span class="highlight">desde el mes pasado.</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q10')">Voir la réponse</button>
+            <div class="feedback" id="f10">Réponse correcte: <span class="correct">J'ai un nouveau travail depuis le mois dernier</span></div>
+        </div>
+        
+        <div class="question" id="q11">
+            <div class="question-number">Question 11</div>
+            <div class="question-text">En esta comarca no ha llovido <span class="highlight">desde hace tres años</span></div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q11')">Voir la réponse</button>
+            <div class="feedback" id="f11">Réponse correcte: <span class="correct">Dans cette région, il n'a pas plu depuis trois ans</span></div>
+        </div>
+        
+        <div class="question" id="q12">
+            <div class="question-number">Question 12</div>
+            <div class="question-text"><span class="highlight">Hace mucho que</span> no nos vemos.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q12')">Voir la réponse</button>
+            <div class="feedback" id="f12">Réponse correcte: <span class="correct">Ça fait longtemps qu'on ne s'est pas vus</span></div>
+        </div>
+        
+        <div class="question" id="q13">
+            <div class="question-number">Question 13</div>
+            <div class="question-text"><span class="highlight">Hace dos años</span> me operaron de apendicitis. Me acuerdo como si fuera hoy.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q13')">Voir la réponse</button>
+            <div class="feedback" id="f13">Réponse correcte: <span class="correct">Il y a deux ans, j'ai été opérée de l'appendicite. Je m'en souviens comme si c'était hier</span></div>
+        </div>
+        
+        <div class="question" id="q14">
+            <div class="question-number">Question 14</div>
+            <div class="question-text"><span class="highlight">Mañana mismo</span> empiezo a hacer régimen</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q14')">Voir la réponse</button>
+            <div class="feedback" id="f14">Réponse correcte: <span class="correct">Dès demain, je commence à faire un régime</span></div>
+        </div>
+        
+        <div class="question" id="q15">
+            <div class="question-number">Question 15</div>
+            <div class="question-text"><span class="highlight">En cuanto anochecía</span> cerraba la puerta a cal y canto</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q15')">Voir la réponse</button>
+            <div class="feedback" id="f15">Réponse correcte: <span class="correct">Dès la tombée du jour, il fermait la porte à double tour</span></div>
+        </div>
+        
+        <div class="question" id="q16">
+            <div class="question-number">Question 16</div>
+            <div class="question-text"><span class="highlight">Antes de</span> ir al colegio me preparo la cartera.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q16')">Voir la réponse</button>
+            <div class="feedback" id="f16">Réponse correcte: <span class="correct">Avant d'aller à l'école je prépare mon cartable.</span></div>
+        </div>
+        
+        <div class="question" id="q17">
+            <div class="question-number">Question 17</div>
+            <div class="question-text"><span class="highlight">Después de</span> cenar iremos al cine.</div>
+            <input type="text" class="answer-input" placeholder="Votre traduction ici...">
+            <button class="show-feedback" onclick="showFeedback('q17')">Voir la réponse</button>
+            <div class="feedback" id="f17">Réponse correcte: <span class="correct">Après avoir dîné nous irons au cinéma.</span></div>
+        </div>
+        
+        <div class="question" id="q18">
+            <div class="question-number">Texte 1</div>
+            <div class="question-text">Desde hacía mucho tiempo, estaba sola y triste. Hace tres meses, conocí a Alain. Me dijo : "Hasta mañana!". Desde entonces, salimos todos los días.<br><br>
+            Después de la clases, nos paseamos hasta las seis; después del paseo, estudiamos.<br><br>
+            Desde hace tres meses soy feliz y dentro de dos años nos casaremos.</div>
+            <textarea class="answer-input" placeholder="Votre traduction ici..." rows="6"></textarea>
+            <button class="show-feedback" onclick="showFeedback('q18')">Voir la réponse</button>
+            <div class="feedback" id="f18">Réponse correcte: <span class="correct">Depuis longtemps, j'étais seule et triste. Il y a trois mois j'ai connu Alain. Il m'a dit: "À demain!". Depuis, nous sortons tous les jours.<br><br>
+            Après les cours nous nous promenons jusqu'à dix-huit heures; après la promenade, nous étudions.<br><br>
+            Depuis trois mois je suis heureuse et dans deux ans nous nous marierons.</span></div>
+        </div>
+        
+        <div class="question" id="q19">
+            <div class="question-number">Texte 2</div>
+            <div class="question-text">Dentro de ocho días empiezan las vacaciones de Navidad. Hace años que no viajo en vacaciones, pero este año me marcharé a esquiar a Francia por estas fechas. No esquío desde hace tiempo y no he visto la nieve desde mi último viaje a los Alpes.<br><br>
+            Me alojaré en un hotel durante una semana. Me quedaré en Francia el día de Nochebuena y Navidad y regresaré a España para Fin de Año.<br><br>
+            En cuanto llegue, hablaré en francés. No practico esta lengua desde hace una década.</div>
+            <textarea class="answer-input" placeholder="Votre traduction ici..." rows="6"></textarea>
+            <button class="show-feedback" onclick="showFeedback('q19')">Voir la réponse</button>
+            <div class="feedback" id="f19">Réponse correcte: <span class="correct">Les vacances de Noël commenceront dans huit jours. Cela fait des années que je ne voyage pas pendant les vacances, mais cette année je pars skier en France à ces dates. Je ne fais pas de ski depuis longtemps et je n'ai pas vu la neige depuis mon dernier voyage dans les Alpes.<br><br>
+            Je logerai dans un hôtel pendant une semaine. Je resterai en France la veille et le jour de Noël et je rentrerai en Espagne pour le Nouvel an.<br><br>
+            Dès mon arrivée, je parlerai français. Je ne pratique pas cette langue depuis une dizaine d'années.</span></div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

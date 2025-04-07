@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ud.1.12</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+        .construction {
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: medium;
+            text-align: center;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>12. Les temps du passé: plus-que-parfait et passé antérieur (formation)</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1 - Plus-que-parfait</div>
+            <div class="question-text">
+                <p>Le <strong>PLUS-QUE-PARFAIT</strong> se construit avec:</p>
+            </div>
+            
+            <div class="construction">
+                <p><strong>l'auxiliaire être ou avoir à <input type="text" class="answer-input" placeholder="Votre réponse ici..."></strong></p>
+                <p><strong>+</strong></p>
+                <p><strong><input type="text" class="answer-input" placeholder="Votre réponse ici..."> du verbe conjugué</strong></p>
+                <p><strong><span style="color: #000000;">J'<span style="text-decoration: underline;">avais</span> été</span></strong></p>
+            </div>
+            
+            <p><strong>Complétez:</strong></p>
+            
+            <p>1. Aller (1ère personne du masculin singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button> <div class="feedback" id="f1a">Réponse correcte: <span class="correct">j'étais allé</span></div></p>
+            
+            <p>2. Raconter (3ème personne du pluriel féminin) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button> <div class="feedback" id="f1b">Réponse correcte: <span class="correct">elles avaient raconté</span></div></p>
+            
+            <p>3. Marcher (2e personne du pluriel) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button> <div class="feedback" id="f1c">Réponse correcte: <span class="correct">vous aviez marché</span></div></p>
+            
+            <p>4. Voir (1ère personne du singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button> <div class="feedback" id="f1d">Réponse correcte: <span class="correct">j'avais vu</span></div></p>
+            
+            <p>5. Parvenir (1ère personne du féminin pluriel) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button> <div class="feedback" id="f1e">Réponse correcte: <span class="correct">nous étions parvenues</span></div></p>
+            
+            <p>6. Finir (2e personne du singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1f')">Voir la réponse</button> <div class="feedback" id="f1f">Réponse correcte: <span class="correct">tu avais fini</span></div></p>
+            
+            <p>7. Sortir (3ème personne du pluriel+masculin) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1g')">Voir la réponse</button> <div class="feedback" id="f1g">Réponse correcte: <span class="correct">ils étaient sortis</span></div></p>
+            
+            <button class="show-feedback" onclick="showFeedback('q1h')">Voir la réponse pour la construction</button>
+            <div class="feedback" id="f1h">
+                <p>Réponse correcte:</p>
+                <div class="construction">
+                    <p><strong>l'auxiliaire être ou avoir à <span class="correct">l'imparfait</span></strong></p>
+                    <p><strong>+</strong></p>
+                    <p><strong><span class="correct">le participe passé</span> du verbe conjugué</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2 - Passé antérieur</div>
+            <div class="question-text">
+                <p>Le <strong>PASSÉ ANTÉRIEUR</strong> se construit avec:</p>
+            </div>
+            
+            <div class="construction">
+                <p><strong>l'auxiliaire être ou avoir au <input type="text" class="answer-input" placeholder="Votre réponse ici..."></strong></p>
+                <p><strong>+</strong></p>
+                <p><strong><input type="text" class="answer-input" placeholder="Votre réponse ici..."> du verbe conjugué</strong></p>
+                <p><strong><span style="color: #000000;">J'<span style="text-decoration: underline;">eus</span> été</span></strong></p>
+            </div>
+            
+            <p><strong>Complétez:</strong></p>
+            
+            <p>1. Aller (1ère personne du masculin singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2a')">Voir la réponse</button> <div class="feedback" id="f2a">Réponse correcte: <span class="correct">je fus allé</span></div></p>
+            
+            <p>2. Raconter (3ème personne du pluriel féminin) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2b')">Voir la réponse</button> <div class="feedback" id="f2b">Réponse correcte: <span class="correct">elles eurent raconté</span></div></p>
+            
+            <p>3. Marcher (2e personne du pluriel) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2c')">Voir la réponse</button> <div class="feedback" id="f2c">Réponse correcte: <span class="correct">vous eûtes marché</span></div></p>
+            
+            <p>4. Voir (1ère personne du singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2d')">Voir la réponse</button> <div class="feedback" id="f2d">Réponse correcte: <span class="correct">j'eus vu</span></div></p>
+            
+            <p>5. Parvenir (1ère personne du féminin pluriel) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2e')">Voir la réponse</button> <div class="feedback" id="f2e">Réponse correcte: <span class="correct">nous fûmes parvenues</span></div></p>
+            
+            <p>6. Finir (2e personne du singulier) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2f')">Voir la réponse</button> <div class="feedback" id="f2f">Réponse correcte: <span class="correct">tu eus fini</span></div></p>
+            
+            <p>7. Sortir (3ème personne du pluriel+masculin) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q2g')">Voir la réponse</button> <div class="feedback" id="f2g">Réponse correcte: <span class="correct">ils furent sortis</span></div></p>
+            
+            <button class="show-feedback" onclick="showFeedback('q2h')">Voir la réponse pour la construction</button>
+            <div class="feedback" id="f2h">
+                <p>Réponse correcte:</p>
+                <div class="construction">
+                    <p><strong>l'auxiliaire être ou avoir au <span class="correct">passé simple</span></strong></p>
+                    <p><strong>+</strong></p>
+                    <p><strong><span class="correct">le participe passé</span> du verbe conjugué</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

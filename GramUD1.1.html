@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expressions Temporelles en Français</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Expressions Temporelles en Français</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Exercice 1 - Prépositions temporelles</div>
+            <div class="question-text">
+                <p><strong>Complétez le tableau avec les équivalents en espagnol des expressions temporelles en français</strong></p>
+                
+                <table>
+                    <tr>
+                        <th>Expression française</th>
+                        <th>Votre traduction</th>
+                        <th>Réponse</th>
+                    </tr>
+                    <tr>
+                        <td>depuis trois ans</td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q1a')">Voir</button>
+                            <div class="feedback" id="f1a"><span class="correct">desde hace tres años</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>dans l'année</td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q1b')">Voir</button>
+                            <div class="feedback" id="f1b"><span class="correct">durante el año</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>à une heure quarante</td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q1c')">Voir</button>
+                            <div class="feedback" id="f1c"><span class="correct">a una hora y cuarenta</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>au mois d'août</td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q1d')">Voir</button>
+                            <div class="feedback" id="f1d"><span class="correct">en el mes de agosto</span></div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>sur juillet-août</td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q1e')">Voir</button>
+                            <div class="feedback" id="f1e"><span class="correct">en julio-agosto</span></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Exercice 2 - Conjonctions temporelles</div>
+            <div class="question-text">
+                <p><strong>Associez chaque conjonction temporelle avec sa valeur et son équivalent en espagnol</strong></p>
+                
+                <table>
+                    <tr>
+                        <th>Conjonction</th>
+                        <th>Valeur temporelle</th>
+                        <th>Votre traduction</th>
+                        <th>Réponse</th>
+                    </tr>
+                    <tr>
+                        <td>lorsque</td>
+                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q2a')">Voir</button>
+                            <div class="feedback" id="f2a">
+                                <p>Valeur: <span class="correct">simultanéité</span></p>
+                                <p>Traduction: <span class="correct">cuando</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>du temps où</td>
+                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q2b')">Voir</button>
+                            <div class="feedback" id="f2b">
+                                <p>Valeur: <span class="correct">simultanéité</span></p>
+                                <p>Traduction: <span class="correct">en la época en que</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>avant que</td>
+                        <td><input type="text" class="answer-input" placeholder="Valeur..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Traduction..."></td>
+                        <td><button class="show-feedback" onclick="showFeedback('q2c')">Voir</button>
+                            <div class="feedback" id="f2c">
+                                <p>Valeur: <span class="correct">postériorité</span></p>
+                                <p>Traduction: <span class="correct">antes de que</span></p>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Exercice 3 - Adverbes temporels</div>
+            <div class="question-text">
+                <p><strong>Traduisez les phrases suivantes en espagnol en faisant attention aux adverbes temporels</strong></p>
+                
+                <p>1. Les Français partent plus souvent en vacances maintenant.<br>
+                   <input type="text" class="answer-input" placeholder="Votre traduction...">
+                   <button class="show-feedback" onclick="showFeedback('q3a')">Voir la réponse</button>
+                   <div class="feedback" id="f3a">Réponse correcte: <span class="correct">Los franceses se van de vacaciones más a menudo ahora.</span></div>
+                </p>
+                
+                <p>2. Autrefois, on restait longtemps au même endroit.<br>
+                   <input type="text" class="answer-input" placeholder="Votre traduction...">
+                   <button class="show-feedback" onclick="showFeedback('q3b')">Voir la réponse</button>
+                   <div class="feedback" id="f3b">Réponse correcte: <span class="correct">Antaño/En otros tiempos, se quedaban mucho tiempo en el mismo lugar.</span></div>
+                </p>
+                
+                <p>3. Ils cherchent à s'éloigner le moins longtemps possible.<br>
+                   <input type="text" class="answer-input" placeholder="Votre traduction...">
+                   <button class="show-feedback" onclick="showFeedback('q3c')">Voir la réponse</button>
+                   <div class="feedback" id="f3c">Réponse correcte: <span class="correct">Buscan alejarse durante el menor tiempo posible.</span></div>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

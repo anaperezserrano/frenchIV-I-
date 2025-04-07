@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ud.1.11</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        textarea.answer-input {
+            min-height: 100px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 60px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>11. Les temps du passé: passé simple (formation)</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><strong>Relevez les dix passés simples qui se trouvent dans le texte suivant et donnez leur infinitif.</strong></p>
+                <p><strong>Pour ce faire, copiez-collez le texte, mettez les passés simples en gras, puis écrivez à côté (entre parenthèses) leur infinitif.</strong></p>
+                <p style="text-align: justify;"><span style="color: #993333; font-family: Arial,Helvetica,sans-serif; font-size: medium;">Eléments de biographie d'une Vie Épique et Passionnée</span></p>
+                <p class="txtjustifie" style="text-align: justify;">Artiste de génie aux multiples talents écrivain, peintre, sculpteur Sarah Bernhardt reste une des plus brillantes femmes de son époque. Son style inspira la mode, les arts décoratifs et même l'esthétique de l'Art Nouveau.</p>
+                <p class="txtjustifie" style="text-align: justify;">Elle débuta au Conservatoire puis à la Comédie Française en 1862. Elle avait 18 ans. Jusqu'à sa mort, à presque quatre vingts ans, elle joua cent vingt pièces. Son répertoire fut éclectique. Elle excella dans la comédie bourgeoise comme <em>la Dame aux Camélias</em>, triompha dans le théâtre romantique avec <em>Hernani </em>et <em>Ruy Blas</em>, s'illustra dans des rôles travestis avec<em> Hamlet</em>, <em>Lorenzaccio</em> ou <em>l'Aiglon</em>. <em>L'Aiglon</em> écrit par son ami Edmond Rostand dont elle interpréta au cours de l'Exposition Universelle de 1900 deux cent cinquante représentations avec un succès ininterrompu. Mais elle symbolise avant tout la tragédienne de <em>Phèdre</em> de Racine qu'elle joua pendant quarante ans.</p>
+                <p class="txtjustifie" style="text-align: justify;">Cette personnalité, hors du commun, fut adulée par le monde entier à travers des tournées triomphales. Elle sillonna la planète endossant les rôles de plus de cent vingt personnages allant même jusqu'à être sollicitée par le cinéma américain.</p>
+            </div>
+            <textarea class="answer-input" placeholder="Votre réponse ici..."></textarea>
+            <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+            <div class="feedback" id="f1">
+                <p>Réponse correcte:</p>
+                <p class="txtjustifie" style="text-align: justify;">Artiste de génie aux multiples talents écrivain, peintre, sculpteur Sarah Bernhardt reste une des plus brillantes femmes de son époque. Son style <strong>inspira</strong> (inspirer) la mode, les arts décoratifs et même l'esthétique de l'Art Nouveau.</p>
+                <p class="txtjustifie" style="text-align: justify;">Elle <strong>débuta</strong> (débuter) au Conservatoire puis à la Comédie Française en 1862. Elle avait 18 ans. Jusqu'à sa mort, à presque quatre vingts ans, elle <strong>joua</strong> (jouer) cent vingt pièces. Son répertoire <strong>fut</strong> (être) éclectique. Elle <strong>excella</strong> (exceller) dans la comédie bourgeoise comme <em>la Dame aux Camélias</em>, <strong>triompha</strong> (triompher) dans le théâtre romantique avec <em>Hernani </em>et <em>Ruy Blas</em>, <strong>s'illustra</strong> (s'illustrer) dans des rôles travestis avec<em> Hamlet</em>, <em>Lozenzaccio</em> ou <em>l'Aiglon</em>. <em>L'Aiglon</em> écrit par son ami Edmond Rostand dont elle <strong>interpréta</strong> (interpréter) au cours de l'Exposition Universelle de 1900 deux cent cinquante représentations avec un succès ininterrompu. Mais elle symbolise avant tout la tragédienne de <em>Phèdre</em> de Racine qu'elle <strong>joua</strong> (jouer) pendant quarante ans.</p>
+                <p class="txtjustifie" style="text-align: justify;">Cette personnalité, hors du commun, <strong>fut</strong> (être) adulée par le monde entier à travers des tournées triomphales. Elle <strong>sillonna</strong> (sillonner) la planète endossant les rôles de plus de cent vingt personnages allant même jusqu'à être sollicitée par le cinéma américain.</p>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p><strong>Complétez la conjugaison du passé simple des verbes qui se terminent en -er</strong>:</p>
+            </div>
+            <p>- Je <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- tu <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- il/elle/on <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- nous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- vous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- ils/elles <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+            <div class="feedback" id="f2">
+                <p>Réponse correcte:</p>
+                <p>- Je <strong>ai</strong></p>
+                <p>- tu <strong>as</strong></p>
+                <p>- il/elle/on <strong>a</strong></p>
+                <p>- nous <strong>âmes</strong></p>
+                <p>- vous <strong>âtes</strong></p>
+                <p>- ils/elles <strong>èrent</strong></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p><strong>Même consigne. Relevez les dix passés simples qui se trouvent dans le texte suivant et donnez leur infinitif.</strong></p>
+                <p>Quand Socrates reçut l´ordre de boire la ciguë, il parut d´un calme absolu: il s´attendait à cet ordre depuis bien longtemps. Il but d´un trait le poison et mourut presque instantanément. Ses disciples et amis accoururent et ne purent que constater le décès de leur maître. Leur chagrin fut si violent qu´il fallut les empêcher de mettre fin, eux aussi, à leurs jours. Afin que les enseignements de Socrates lui survivent, ils résolurent de les faire connaître à tous. Et en effet, ces enseignements survécurent jusqu´à aujourd´hui.</p>
+            </div>
+            <textarea class="answer-input" placeholder="Votre réponse ici..."></textarea>
+            <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+            <div class="feedback" id="f3">
+                <p>Réponse correcte:</p>
+                <p>Quand Socrates <strong>reçut</strong> (recevoir) l´ordre de boire la ciguë, il <strong>parut</strong> (paraître) d´un calme absolu: il s´attendait à cet ordre depuis bien longtemps. Il <strong>but</strong> (boire) d´un trait le poison et <strong>mourut</strong> (mourir) presque instantanément. Ses disciples et amis <strong>accoururent</strong> (accourir) et ne <strong>purent</strong> (pouvoir) que constater le décès de leur maître. Leur chagrin <strong>fut</strong> (être) si violent qu´il <strong>fallut</strong> (falloir) les empêcher de mettre fin, eux aussi, à leurs jours. Afin que les enseignements de Socrates lui survivent, ils <strong>résolurent</strong> (résoudre) de les faire connaître à tous. Et en effet, ces enseignements <strong>survécurent</strong> (survivre) jusqu´à aujourd´hui.</p>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p><strong>Complétez la conjugaison du passé simple des verbes ci-dessus.</strong></p>
+                <p>- Je <strong>-us</strong></p>
+            </div>
+            <p>- tu <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- il/elle/on <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- nous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- vous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- ils/elles <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+            <div class="feedback" id="f4">
+                <p>Réponse correcte:</p>
+                <p>- Je <strong>-us</strong></p>
+                <p>- tu <strong>-us</strong></p>
+                <p>- il/elle/on <strong>-ut</strong></p>
+                <p>- nous <strong>-ûmes</strong></p>
+                <p>- vous <strong>-ûtes</strong></p>
+                <p>- ils/elles <strong>-urent</strong></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p><strong>Même consigne. Relevez les dix passés simples qui se trouvent dans le texte suivant et donnez leur infinitif.</strong></p>
+                <p>Dès qu´il ouvrit la lettre qu´Aglaé lui avait laissée, il faillit s´evanouir. Il blêmit, se mit à trembler de fureur et finit sa lecture à grand-peine. C´était un adieu sec et moqueur. Ah! Elle s´etait bien jouée de lui et il serait la risée de tous ses amis qui, en effet, firent des gorges chaudes de ses malheurs. Il prit la plume et écrivit à la traîtresse une longue missive accusatrice. Il la poursuivit longtemps de ses lettres, tantôt plaintives, tantôt violentes, lettres auxquelles jamais elle ne répondit.</p>
+            </div>
+            <textarea class="answer-input" placeholder="Votre réponse ici..."></textarea>
+            <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+            <div class="feedback" id="f5">
+                <p>Réponse correcte:</p>
+                <p>Dès qu´il <strong>ouvrit</strong> (ouvrir) la lettre qu´Aglaé lui avait laissée, il <strong>faillit</strong> (faillir) s´evanouir. Il <strong>blêmit</strong> (blêmir), <strong>se mit</strong> (se mettre) à trembler de fureur et <strong>finit</strong> (finir) sa lecture à grand-peine. C´était un adieu sec et moqueur. Ah! Elle s´etait bien jouée de lui et il serait la risée de tous ses amis qui, en effet, <strong>firent</strong> (faire) des gorges chaudes de ses malheurs. Il <strong>prit</strong> (prendre) la plume et <strong>écrivit</strong> (écrire) à la traîtresse une longue missive accusatrice. Il la <strong>poursuivit</strong> (poursuivre) longtemps de ses lettres, tantôt plaintives, tantôt violentes, lettres auxquelles jamais elle ne <strong>répondit</strong> (répondre).</p>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p><strong>Complétez la conjugaison du passé simple des verbes ci-dessus.</strong></p>
+                <p>- Je <strong>-is</strong></p>
+            </div>
+            <p>- tu <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- il/elle/on <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- nous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- vous <input type="text" class="answer-input" style="width: 60px; display: inline;"> </p>
+            <p>- ils/elles <input type="text" class="answer-input" style="width: 60px; display: inline;"></p>
+            <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+            <div class="feedback" id="f6">
+                <p>Réponse correcte:</p>
+                <p>- Je <strong>-is</strong></p>
+                <p>- tu <strong>-is</strong></p>
+                <p>- il/elle/on <strong>-it</strong></p>
+                <p>- nous <strong>-îmes</strong></p>
+                <p>- vous <strong>-îtes</strong></p>
+                <p>- ils/elles <strong>-irent</strong></p>
+            </div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">
+                <p><strong>Conjuguez au passé simple les verbes entre parenthèses</strong></p>
+                <p>Ce matin-là, Michel s´était levé de bonne humeur. Il faisait beau, chaud et il avait fait un rêve tendre, plein du plaisir que procurent d´agréables rencontres. Il se (servir) <input type="text" class="answer-input" style="width: 80px; display: inline;"> , (allumer) <input type="text" class="answer-input" style="width: 80px; display: inline;"> la radio et c´est à ce moment-là que les choses (commencer) <input type="text" class="answer-input" style="width: 100px; display: inline;"> à se détraquer. Un journaliste racontait sur un ton badin toutes les misères du monde. La guerre avait éclaté là, telle maladie connaissait un développement ahurissant ici, tel train avait déraillé en Inde et entraîné dans la mort des centaines de gens. Une fameuse equipe de football s´était inclinée devant une autre inconnue; une vedette de cinéma avait divorcé d´avec une Miss Monde; la TVA allait encore augmenter ..... L´oeil triste, les oreilles terrassées par tant de catastrophes, il en (oublier) <input type="text" class="answer-input" style="width: 80px; display: inline;"> la biscotte qu´il tenait du bout des doigts et la (voir) <input type="text" class="answer-input" style="width: 50px; display: inline;"> bas se désintégrer dans son café. Consterné, il (aller) <input type="text" class="answer-input" style="width: 60px; display: inline;"> vider le tout dans l´évier et (pousser) <input type="text" class="answer-input" style="width: 80px; display: inline;"> un gros soupir qui (avoir) <input type="text" class="answer-input" style="width: 50px; display: inline;"> pour effet de réveiller les chats qui (aller) <input type="text" class="answer-input" style="width: 90px; display: inline;"> se réfugier dans le lit encore tiède....</p>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+            <div class="feedback" id="f7">
+                <p>Réponse correcte:</p>
+                <p>Ce matin-là, Michel s´était levé de bonne humeur. Il faisait beau, chaud et il avait fait un rêve tendre, plein du plaisir que procurent d´agréables rencontres. Il se <strong>servit</strong>, <strong>alluma</strong> la radio et c´est à ce moment-là que les choses <strong>commencèrent</strong> à se détraquer. Un journaliste racontait sur un ton badin toutes les misères du monde. La guerre avait éclaté là, telle maladie connaissait un développement ahurissant ici, tel train avait déraillé en Inde et entraîné dans la mort des centaines de gens. Une fameuse equipe de football s´était inclinée devant une autre inconnue; une vedette de cinéma avait divorcé d´avec une Miss Monde; la TVA allait encore augmenter ..... L´oeil triste, les oreilles terrassées par tant de catastrophes, il en <strong>oublia</strong> la biscotte qu´il tenait du bout des doigts et la <strong>vit</strong> bas se désintégrer dans son café. Consterné, il <strong>alla</strong> vider le tout dans l´évier et <strong>poussa</strong> un gros soupir qui <strong>eut</strong> pour effet de réveiller les chats qui <strong>allèrent</strong> se réfugier dans le lit encore tiède....</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

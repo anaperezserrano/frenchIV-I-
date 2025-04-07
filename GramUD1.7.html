@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prépositions et locutions prépositives de temps</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .radio-options {
+            margin-top: 10px;
+        }
+        .radio-option {
+            margin-bottom: 8px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+    </style>
+</head>
+<body>
+    <h1>7. Prépositions et locutions prépositives de temps (emploi)</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <h2>Cochez la réponse exacte</h2>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">Le facteur est passé <span class="highlight">.....</span> huit heures du matin</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-a" value="a">
+                    <label for="q1-a">a. à les</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1-b" value="b">
+                    <label for="q1-b">b. à</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+            <div class="feedback" id="f1">Réponse correcte: <span class="correct">b. à</span></div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text"><span class="highlight">.......</span> printemps les amants se donnent du bon temps.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2-a" value="a">
+                    <label for="q2-a">a. Au</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2-b" value="b">
+                    <label for="q2-b">b. En</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+            <div class="feedback" id="f2">Réponse correcte: <span class="correct">a. Au</span></div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text"><span class="highlight">......</span> Noël, j'irai chez mes grand-parents.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3-a" value="a">
+                    <label for="q3-a">a. En</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3-b" value="b">
+                    <label for="q3-b">b. À</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+            <div class="feedback" id="f3">Réponse correcte: <span class="correct">b. À</span></div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text"><span class="highlight">.....</span> XXe siècle, il y a eu deux guerres mondiales.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-a" value="a">
+                    <label for="q4-a">a. Au</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4-b" value="b">
+                    <label for="q4-b">b. Dans le</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+            <div class="feedback" id="f4">Réponse correcte: <span class="correct">a. Au</span></div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">Je suis arrivé chez moi <span class="highlight">......</span> deux heures de l'après midi.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5-a" value="a">
+                    <label for="q5-a">a. vers</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5-b" value="b">
+                    <label for="q5-b">b. environ</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+            <div class="feedback" id="f5">Réponse correcte: <span class="correct">a. vers</span></div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">La réunion a duré <span class="highlight">.....</span> deux heures</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6-a" value="a">
+                    <label for="q6-a">a. vers</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6-b" value="b">
+                    <label for="q6-b">b. environ</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+            <div class="feedback" id="f6">Réponse correcte: <span class="correct">b. environ</span></div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">Il est resté <span class="highlight">……………</span> trois mois à l'hôpital.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-a" value="a">
+                    <label for="q7-a">a. pour</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-b" value="b">
+                    <label for="q7-b">b. en</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-c" value="c">
+                    <label for="q7-c">c. dans</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q7" id="q7-d" value="d">
+                    <label for="q7-d">d. pendant</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+            <div class="feedback" id="f7">Réponse correcte: <span class="correct">d. pendant</span></div>
+        </div>
+        
+        <div class="question" id="q8">
+            <div class="question-number">Question 8</div>
+            <div class="question-text">Ils étaient partis <span class="highlight">……………</span> six mois faire le tour du monde</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="checkbox" name="q8" id="q8-a" value="a">
+                    <label for="q8-a">a. dans</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" name="q8" id="q8-b" value="b">
+                    <label for="q8-b">b. pendant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" name="q8" id="q8-c" value="c">
+                    <label for="q8-c">c. pour</label>
+                </div>
+                <div class="radio-option">
+                    <input type="checkbox" name="q8" id="q8-d" value="d">
+                    <label for="q8-d">d. En</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q8')">Voir la réponse</button>
+            <div class="feedback" id="f8">Réponses correctes: <span class="correct">b. pendant</span>, <span class="correct">c. pour</span></div>
+        </div>
+        
+        <div class="question" id="q9">
+            <div class="question-number">Question 9</div>
+            <div class="question-text">Tu n'arriveras jamais à terminer ce travail <span class="highlight">……………</span> si peu de temps.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-a" value="a">
+                    <label for="q9-a">a. pendant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-b" value="b">
+                    <label for="q9-b">b. en</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-c" value="c">
+                    <label for="q9-c">c. dans</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q9" id="q9-d" value="d">
+                    <label for="q9-d">d. pour</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q9')">Voir la réponse</button>
+            <div class="feedback" id="f9">Réponse correcte: <span class="correct">b. en</span></div>
+        </div>
+        
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text">Il reviendra à Marseille <span class="highlight">……………</span> une quinzaine de jours.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-a" value="a">
+                    <label for="q10-a">a. pendant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-b" value="b">
+                    <label for="q10-b">b. pour</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-c" value="c">
+                    <label for="q10-c">c. dans</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q10" id="q10-d" value="d">
+                    <label for="q10-d">d. en</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q10')">Voir la réponse</button>
+            <div class="feedback" id="f10">Réponse correcte: <span class="correct">c. dans</span></div>
+        </div>
+        
+        <div class="question" id="q11">
+            <div class="question-number">Question 11</div>
+            <div class="question-text">Il y a des siècles, il fallait une semaine pour traverser la France ; maintenant on le fait <span class="highlight">……………</span> la journée.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q11" id="q11-a" value="a">
+                    <label for="q11-a">a. pendant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q11" id="q11-b" value="b">
+                    <label for="q11-b">b. pour</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q11" id="q11-c" value="c">
+                    <label for="q11-c">c. en</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q11" id="q11-d" value="d">
+                    <label for="q11-d">d. dans</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q11')">Voir la réponse</button>
+            <div class="feedback" id="f11">Réponse correcte: <span class="correct">d. dans</span></div>
+        </div>
+        
+        <div class="question" id="q12">
+            <div class="question-number">Question 12</div>
+            <div class="question-text">Je retourne à Paris <span class="highlight">.................</span> deux jours</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q12" id="q12-a" value="a">
+                    <label for="q12-a">a. dans</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q12" id="q12-b" value="b">
+                    <label for="q12-b">b. pendant</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q12" id="q12-c" value="c">
+                    <label for="q12-c">c. pour</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q12" id="q12-d" value="d">
+                    <label for="q12-d">d. en</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q12')">Voir la réponse</button>
+            <div class="feedback" id="f12">Réponse correcte: <span class="correct">a. dans</span></div>
+        </div>
+        
+        <div class="question" id="q13">
+            <div class="question-number">Question 13</div>
+            <div class="question-text"><span class="highlight">...................</span> son arrivée à Paris, il cherche un professeur de français.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-a" value="a">
+                    <label for="q13-a">a. il y a</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-b" value="b">
+                    <label for="q13-b">b. dès</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q13" id="q13-c" value="c">
+                    <label for="q13-c">c. depuis</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q13')">Voir la réponse</button>
+            <div class="feedback" id="f13">Réponse correcte: <span class="correct">c. depuis</span></div>
+        </div>
+        
+        <div class="question" id="q14">
+            <div class="question-number">Question 14</div>
+            <div class="question-text"><span class="highlight">.........................</span> son arrivée à Paris, il s'est inscrit à un cours de français.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q14" id="q14-a" value="a">
+                    <label for="q14-a">a. il y a</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q14" id="q14-b" value="b">
+                    <label for="q14-b">b. depuis</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q14" id="q14-c" value="c">
+                    <label for="q14-c">c. dès</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q14')">Voir la réponse</button>
+            <div class="feedback" id="f14">Réponse correcte: <span class="correct">c. dès</span></div>
+        </div>
+        
+        <div class="question" id="q15">
+            <div class="question-number">Question 15</div>
+            <div class="question-text"><span class="highlight">……………</span> une quinzaine d'années que je ne l'ai pas vue.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q15" id="q15-a" value="a">
+                    <label for="q15-a">a. il y a</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q15" id="q15-b" value="b">
+                    <label for="q15-b">b. depuis</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q15" id="q15-c" value="c">
+                    <label for="q15-c">c. dès</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q15')">Voir la réponse</button>
+            <div class="feedback" id="f15">Réponse correcte: <span class="correct">a. il y a</span></div>
+        </div>
+        
+        <div class="question" id="q16">
+            <div class="question-number">Question 16</div>
+            <div class="question-text">Je suis arrivé en France <span class="highlight">...................</span> un mois.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-a" value="a">
+                    <label for="q16-a">a. dès</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-b" value="b">
+                    <label for="q16-b">b. il y a</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q16" id="q16-c" value="c">
+                    <label for="q16-c">c. depuis</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q16')">Voir la réponse</button>
+            <div class="feedback" id="f16">Réponse correcte: <span class="correct">b. il y a</span></div>
+        </div>
+        
+        <div class="question" id="q17">
+            <div class="question-number">Question 17</div>
+            <div class="question-text">j'adore lire <span class="highlight">...............</span> avoir déjeuné.</div>
+            <div class="radio-options">
+                <div class="radio-option">
+                    <input type="radio" name="q17" id="q17-a" value="a">
+                    <label for="q17-a">a. après</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q17" id="q17-b" value="b">
+                    <label for="q17-b">b. avant d'</label>
+                </div>
+            </div>
+            <button class="show-feedback" onclick="showFeedback('q17')">Voir la réponse</button>
+            <div class="feedback" id="f17">Réponse correcte: <span class="correct">a. après</span></div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

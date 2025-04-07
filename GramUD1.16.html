@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.1.16</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+        .construction {
+            color: #ff0000;
+            font-family: 'Courier New', monospace;
+            font-size: medium;
+            text-align: center;
+            margin: 10px 0;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+        .attention {
+            color: #d35400;
+            font-weight: bold;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>16. Conjonctions et locutions conjonctives de temps ( sens et emploi des temps)</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><strong>Mettez aux temps convenables les verbes entre parenthèses, puis indiquer le sens de la subordonnée de temps.</strong></p>
+                <p>Quand il (se rendre) à Paris, il n´allait pas à l´hôtel mais logeait chez des amis.</p>
+                <input type="text" class="answer-input" placeholder="Votre réponse ici...">
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    Réponse correcte: <span class="correct">Quand il se rendait (simultanéité ponctuelle)/s'était rendu (antériorité) à Paris, il n'allait pas à l'hôtel mais logeait chez des amis.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p><strong>Indiquer le sens de la subordonnée de temps.</strong></p>
+                <p>Quand il se rendait à Paris, il n´allait pas à l´hôtel mais logeait chez des amis.</p>
+                <div>
+                    <input type="radio" name="q2" id="q2a"><label for="q2a">a. postériorité</label><br>
+                    <input type="radio" name="q2" id="q2b"><label for="q2b">b. antériorité</label><br>
+                    <input type="radio" name="q2" id="q2c"><label for="q2c">c. simultanéité</label>
+                </div>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    Réponse correcte: <span class="correct">c. simultanéité</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p><strong>Mettez aux temps convenables les verbes entre parenthèses.</strong></p>
+                <p>Lorsqu´elle (arriver) à Londres, il pleuvait.</p>
+                <input type="text" class="answer-input" placeholder="Votre réponse ici...">
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    Réponse correcte: <span class="correct">Lorsqu´elle arriva/est arrivée (simultanéité) / était arrivée (antériorité) à Londres, il pleuvait.</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p><strong>Indiquer le sens de la subordonnée de temps.</strong></p>
+                <p>Lorsqu´elle arriva à Londres, il pleuvait.</p>
+                <div>
+                    <input type="radio" name="q4" id="q4a"><label for="q4a">a. postériorité</label><br>
+                    <input type="radio" name="q4" id="q4b"><label for="q4b">b. simultanéité</label><br>
+                    <input type="radio" name="q4" id="q4c"><label for="q4c">c. antériorité</label>
+                </div>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    Réponse correcte: <span class="correct">b. simultanéité</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p><strong>Mettez aux temps convenables les verbes entre parenthèses.</strong></p>
+                <p>Elle fera son gâteau quand les élèves (être) à l´école.</p>
+                <input type="text" class="answer-input" placeholder="Votre réponse ici...">
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    Réponse correcte: <span class="correct">Elle fera son gâteau quand les élèves seront à l´école.</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Continúa con las demás preguntas siguiendo el mismo patrón -->
+        
+        <div class="question" id="q25">
+            <div class="question-number">Question 25</div>
+            <div class="question-text">
+                <p><strong>Mettez aux temps convenables les verbes entre parenthèses.</strong></p>
+                <p>En attendant que la petite fille (savoir) jouer « La Sonate au Clair de Lune », il faut qu'elle s'exerce à faire des gammes.</p>
+                <input type="text" class="answer-input" placeholder="Votre réponse ici...">
+                <button class="show-feedback" onclick="showFeedback('q25')">Voir la réponse</button>
+                <div class="feedback" id="f25">
+                    Réponse correcte: <span class="correct">En attendant que la petite fille sache jouer « La Sonate au Clair de Lune », il faut qu'elle s'exerce à faire des gammes.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD1.13</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .example {
+            color: #ff0000;
+            font-style: italic;
+            margin: 10px 0;
+        }
+        .underline {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>13. Les temps du passé: le passé surcomposé (formation)</h1>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p class="underline"><strong>FORMATION :</strong></p>
+                <p>Le <strong>passé surcomposé</strong> est le temps composé du <strong>passé composé</strong></p>
+                <p>Dans le <strong>Passé composé</strong> l'auxiliaire est <strong>au PRÉSENT</strong></p>
+                <div class="example">
+                    <p><strong>ex.</strong> J'<strong>ai</strong> fini - Je <strong>suis</strong> sortie</p>
+                </div>
+                <p>Dans le <strong>Passé surcomposé</strong> l'auxiliaire est au <strong>PASSÉ COMPOSÉ</strong> : il se forme avec l'auxiliaire ÊTRE ou AVOIR au passé composé + participe passé</p>
+                <div class="example">
+                    <p><strong>ex.</strong> J'<strong>ai eu</strong> fini - J'<strong>ai été</strong> sortie</p>
+                </div>
+                <p class="underline"><strong>EMPLOI :</strong></p>
+                <p>Le <strong>Passé surcomposé</strong> est un temps peu utilisé (surtout avec les verbes pronominaux), qui marque l'<strong>antériorité immédiate</strong> (une action immédiatement antérieure) par rapport à un <strong>passé composé</strong> dans une subordonnée de temps. Il s'emploie généralement à l'oral après les locutions conjonctives d'antériorité "<strong>quand, lorsque, dès que, après que, une fois que, à peine...que.</strong>"</p>
+                <div class="example">
+                    <p><strong>ex.</strong> Dès que j'<strong>ai eu écrit</strong> ce courriel, je l'<strong>ai envoyé</strong>.</p>
+                    <p>Une fois qu'elle <strong>a été rentrée</strong>, elle <strong>a commencé</strong> à pleurer.</p>
+                </div>
+                
+                <p><strong>Écrivez les verbes entre parenthèses au passé surcomposé.</strong></p>
+                
+                <p>a. Quand tu (connaître) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button> <div class="feedback" id="f1a">Réponse correcte: <span class="correct">as eu connu</span></div></p>
+                <p>b. Dès que j' (arrêter) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button> <div class="feedback" id="f1b">Réponse correcte: <span class="correct">ai eu arrêté</span></div></p>
+                <p>c. Dès lors que vous leur (rendre) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button> <div class="feedback" id="f1c">Réponse correcte: <span class="correct">avez eu rendu</span></div></p>
+                <p>d. Aussitôt que les informations (commencer) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button> <div class="feedback" id="f1d">Réponse correcte: <span class="correct">ont eu commencé</span></div></p>
+                <p>e. À peine (apprendre) (elle) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button> <div class="feedback" id="f1e">Réponse correcte: <span class="correct">a-t-elle eu appris</span></div></p>
+                <p>f. À partir du moment où Gilberte (rencontrer) <input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1f')">Voir la réponse</button> <div class="feedback" id="f1f">Réponse correcte: <span class="correct">a eu rencontré</span></div></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

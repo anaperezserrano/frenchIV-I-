@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prépositions de Cause en Français</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .text-example {
+            font-style: italic;
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prépositions et Locutions Prépositives de Cause</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Exercice 1 - Identifier les prépositions</div>
+            <div class="question-text">
+                <p><strong>Dans le texte suivant, identifiez les prépositions ou locutions prépositives exprimant la cause :</strong></p>
+                <div class="text-example">
+                    <p>Avant-hier, j'avais passé une nuit blanche et je tombais de sommeil. Hier soir, j'avais encore oublié de mettre mon réveil à sonner. À cause de cette négligence, je ne me suis pas réveillée à l'heure. À force d'oublier, ça devait arriver un jour! Heureusement, du fait des travaux dans la rue, je me suis quand même réveillée mais avec un certain retard. Faute de temps, je n'ai pas pris mon petit-déjeuner et j'ai filé. Sur le quai du métro, une voix a annoncé que le trafic était interrompu sur la ligne 7 en raison d'un incident technique. Aussitôt, je suis sortie et j'ai sauté dans un taxi. Grâce à l'habileté du chauffeur, je suis arrivée à peu près à l'heure au bureau. Je n'avais pas besoin de m'inquiéter de la colère de mon patron. Il est arrivé avec une heure de retard sous prétexte d'une panne de voiture!</p>
+                </div>
+                
+                <p>1. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (aspect négatif)</p>
+                <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button>
+                <div class="feedback" id="f1a">Réponse correcte: <span class="correct">À cause de</span></div>
+                
+                <p>2. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (répétition)</p>
+                <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button>
+                <div class="feedback" id="f1b">Réponse correcte: <span class="correct">À force d'</span></div>
+                
+                <p>3. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (constatation)</p>
+                <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button>
+                <div class="feedback" id="f1c">Réponse correcte: <span class="correct">du fait des</span> ou <span class="correct">en raison d'</span></div>
+                
+                <p>4. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (manque)</p>
+                <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button>
+                <div class="feedback" id="f1d">Réponse correcte: <span class="correct">Faute de</span></div>
+                
+                <p>5. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (aspect positif)</p>
+                <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button>
+                <div class="feedback" id="f1e">Réponse correcte: <span class="correct">Grâce à</span></div>
+                
+                <p>6. <input type="text" class="answer-input" placeholder="Préposition de cause..."> (contestation)</p>
+                <button class="show-feedback" onclick="showFeedback('q1f')">Voir la réponse</button>
+                <div class="feedback" id="f1f">Réponse correcte: <span class="correct">sous prétexte d'</span></div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Exercice 2 - Compléter le tableau</div>
+            <div class="question-text">
+                <p><strong>Complétez le tableau suivant avec les prépositions de cause et leur utilisation :</strong></p>
+                <table>
+                    <tr>
+                        <th>Type</th>
+                        <th>Préposition/Locution</th>
+                        <th>Exemple</th>
+                    </tr>
+                    <tr>
+                        <td>Aspect positif</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                    <tr>
+                        <td>Aspect négatif</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                    <tr>
+                        <td>Manque</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                    <tr>
+                        <td>Répétition</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                    <tr>
+                        <td>Constatation</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                    <tr>
+                        <td>Contestation</td>
+                        <td><input type="text" class="answer-input" placeholder="Préposition..."></td>
+                        <td><input type="text" class="answer-input" placeholder="Exemple..."></td>
+                    </tr>
+                </table>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir les réponses</button>
+                <div class="feedback" id="f2">
+                    <p>Réponses correctes :</p>
+                    <ul>
+                        <li>Aspect positif: <span class="correct">Grâce à</span> - Ex: Grâce à ton aide, j'ai réussi</li>
+                        <li>Aspect négatif: <span class="correct">À cause de</span> - Ex: À cause de la pluie, le match est annulé</li>
+                        <li>Manque: <span class="correct">Faute de</span> - Ex: Faute de temps, je ne peux pas venir</li>
+                        <li>Répétition: <span class="correct">À force de</span> - Ex: À force de travailler, il a réussi</li>
+                        <li>Constatation: <span class="correct">du fait de/en raison de</span> - Ex: En raison des grèves, le train est retardé</li>
+                        <li>Contestation: <span class="correct">sous prétexte de</span> - Ex: Il est parti sous prétexte d'une urgence</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Exercice 3 - Associer les expressions</div>
+            <div class="question-text">
+                <p><strong>Associez chaque expression à sa traduction correcte :</strong></p>
+                
+                <p>1. Je tombe de sommeil <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">Por cansancio</option>
+                    <option value="2">De sueño</option>
+                    <option value="3">Por sueño</option>
+                </select></p>
+                
+                <p>2. À force de patience <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">A falta de paciencia</option>
+                    <option value="2">A fuerza de paciencia</option>
+                    <option value="3">Por culpa de la paciencia</option>
+                </select></p>
+                
+                <p>3. Faute de preuves <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">Por culpa de las pruebas</option>
+                    <option value="2">A falta de pruebas</option>
+                    <option value="3">Gracias a las pruebas</option>
+                </select></p>
+                
+                <p>4. Sous prétexte de maladie <select class="answer-input">
+                    <option value="">Choisir...</option>
+                    <option value="1">A causa de la enfermedad</option>
+                    <option value="2">Con el pretexto de enfermedad</option>
+                    <option value="3">Por enfermedad</option>
+                </select></p>
+                
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir les réponses</button>
+                <div class="feedback" id="f3">
+                    <p>Réponses correctes :</p>
+                    <ul>
+                        <li>1. <span class="correct">De sueño</span></li>
+                        <li>2. <span class="correct">A fuerza de paciencia</span></li>
+                        <li>3. <span class="correct">A falta de pruebas</span></li>
+                        <li>4. <span class="correct">Con el pretexto de enfermedad</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
