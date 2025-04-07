@@ -107,6 +107,47 @@
         .radio-option input {
             margin-right: 8px;
         }
+        .exercise {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .exercise-title {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        .sentence {
+            margin-bottom: 10px;
+        }
+        .blank {
+            border-bottom: 1px solid #333;
+            padding: 0 5px;
+            min-width: 100px;
+            display: inline-block;
+            text-align: center;
+        }
+        .show-answer {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-left: 5px;
+            font-size: 12px;
+        }
+        .show-answer:hover {
+            background-color: #5a6268;
+        }
+        .answer {
+            display: none;
+            color: #28a745;
+            font-weight: bold;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -206,6 +247,69 @@
         </div>
     </div>
 
+    <!-- Ejercicio con botones "Ver respuesta" -->
+    <div class="exercise">
+        <div class="exercise-title">Exercice: Complétez avec l'imparfait ou le passé composé</div>
+        
+        <div class="sentence">
+            1. Après l'orage de la nuit, ce matin, il ne (pleuvoir)<span class="blank" id="blank1"></span>
+            <button class="show-answer" onclick="showAnswer('blank1', 'pleuvait')">Voir réponse</button>
+            <span class="answer" id="answer1">pleuvait</span> plus. Le soleil (briller)<span class="blank" id="blank2"></span>
+            <button class="show-answer" onclick="showAnswer('blank2', 'brillait')">Voir réponse</button>
+            <span class="answer" id="answer2">brillait</span> à nouveau et le vent (chasser)<span class="blank" id="blank3"></span>
+            <button class="show-answer" onclick="showAnswer('blank3', 'chassait')">Voir réponse</button>
+            <span class="answer" id="answer3">chassait</span> les derniers nuages.
+        </div>
+        
+        <div class="sentence">
+            2. Jeanne (sortir)<span class="blank" id="blank4"></span>
+            <button class="show-answer" onclick="showAnswer('blank4', 'est sortie')">Voir réponse</button>
+            <span class="answer" id="answer4">est sortie</span> pour aller à l'université.
+        </div>
+        
+        <div class="sentence">
+            3. En traversant la rue de Tolbiac, elle (voir)<span class="blank" id="blank5"></span>
+            <button class="show-answer" onclick="showAnswer('blank5', 'a vu')">Voir réponse</button>
+            <span class="answer" id="answer5">a vu</span> que le bus (arriver)<span class="blank" id="blank6"></span>
+            <button class="show-answer" onclick="showAnswer('blank6', 'arrivait')">Voir réponse</button>
+            <span class="answer" id="answer6">arrivait</span>.
+        </div>
+        
+        <div class="sentence">
+            4. Alors elle (se mettre)<span class="blank" id="blank7"></span>
+            <button class="show-answer" onclick="showAnswer('blank7', 's\'est mise')">Voir réponse</button>
+            <span class="answer" id="answer7">s'est mise</span> à courir pour essayer de l'attraper.
+        </div>
+        
+        <div class="sentence">
+            5. Mais son pied (glisser)<span class="blank" id="blank8"></span>
+            <button class="show-answer" onclick="showAnswer('blank8', 'a glissé')">Voir réponse</button>
+            <span class="answer" id="answer8">a glissé</span> et elle (tomber)<span class="blank" id="blank9"></span>
+            <button class="show-answer" onclick="showAnswer('blank9', 'est tombée')">Voir réponse</button>
+            <span class="answer" id="answer9">est tombée</span> sur le trottoir.
+        </div>
+        
+        <div class="sentence">
+            6. Le sol (être)<span class="blank" id="blank10"></span>
+            <button class="show-answer" onclick="showAnswer('blank10', 'était')">Voir réponse</button>
+            <span class="answer" id="answer10">était</span> encore glissant à cause de la pluie de la nuit précédente.
+        </div>
+        
+        <div class="sentence">
+            7. Heureusement, elle ne s'est pas fait mal, elle (se relever)<span class="blank" id="blank11"></span>
+            <button class="show-answer" onclick="showAnswer('blank11', 's\'est relevée')">Voir réponse</button>
+            <span class="answer" id="answer11">s'est relevée</span> et elle (monter)<span class="blank" id="blank12"></span>
+            <button class="show-answer" onclick="showAnswer('blank12', 'est montée')">Voir réponse</button>
+            <span class="answer" id="answer12">est montée</span> dans le bus.
+        </div>
+        
+        <div class="sentence">
+            8. Le bus (attendre)<span class="blank" id="blank13"></span>
+            <button class="show-answer" onclick="showAnswer('blank13', 'attendait')">Voir réponse</button>
+            <span class="answer" id="answer13">attendait</span> à l'arrêt.
+        </div>
+    </div>
+
     <script>
         function showFeedback(questionId) {
             const feedbackId = 'f' + questionId.substring(1);
@@ -229,6 +333,15 @@
             feedbacks.forEach(fb => {
                 fb.style.display = "none";
             });
+        }
+        
+        function showAnswer(blankId, correctAnswer) {
+            const answerElement = document.getElementById('answer' + blankId.substring(5));
+            answerElement.style.display = "inline";
+            
+            // Ocultar el botón después de mostrar la respuesta
+            const button = document.querySelector(`button[onclick="showAnswer('${blankId}', '${correctAnswer}')"]`);
+            button.style.display = "none";
         }
     </script>
 </body>
