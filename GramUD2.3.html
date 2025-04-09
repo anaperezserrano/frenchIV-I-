@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice de Subjonctif</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .subquestion {
+            display: inline-block;
+            margin-left: 5px;
+        }
+        .subquestion input {
+            width: 150px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Exercice de Subjonctif - Remplissez les trous</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Exercice</div>
+            <div class="question-text">
+                <p><strong>Remplissez les trous par la forme qui convient</strong></p>
+                
+                <p>1. Le professeur est arrivé en retard, non qu'il <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1a')">Voir la réponse</button> <div class="feedback" id="f1a">Réponse correcte: <span class="correct">ait oublié</span></div></span> (oublier) son cours mais parce que le métro <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1b')">Voir la réponse</button> <div class="feedback" id="f1b">Réponse correcte: <span class="correct">était</span></div></span> (être) en grève.</p>
+                
+                <p>2. Mon gâteau est raté: soit que je <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1c')">Voir la réponse</button> <div class="feedback" id="f1c">Réponse correcte: <span class="correct">n'aie pas mis</span></div></span> (ne pas mettre) la levure pour le faire gonfler, soit que je <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1d')">Voir la réponse</button> <div class="feedback" id="f1d">Réponse correcte: <span class="correct">ne l'aie pas laissé</span></div></span> (ne pas le laisser) assez longtemps au four.</p>
+                
+                <p>3. L'enfant rit aux éclats, ce n'est pas parce que sa mère le <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1e')">Voir la réponse</button> <div class="feedback" id="f1e">Réponse correcte: <span class="correct">prend</span></div></span> (prendre) dans les bras mais c'est parce qu'elle le <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1f')">Voir la réponse</button> <div class="feedback" id="f1f">Réponse correcte: <span class="correct">chatouille</span></div></span> (chatouiller) en même temps.</p>
+                
+                <p>4. Il a les yeux rouges en sortant de chez lui, ce n'est pas qu'il <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1g')">Voir la réponse</button> <div class="feedback" id="f1g">Réponse correcte: <span class="correct">ait</span></div></span> (avoir) du chagrin, mais il <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1h')">Voir la réponse</button> <div class="feedback" id="f1h">Réponse correcte: <span class="correct">fait</span></div></span> (faire) très froid ce matin.</p>
+                
+                <p>5. L'enfant boude devant son problème de mathématiques, non qu'il <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1i')">Voir la réponse</button> <div class="feedback" id="f1i">Réponse correcte: <span class="correct">sache</span></div></span> (ne pas savoir) le faire mais parce qu'il <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1j')">Voir la réponse</button> <div class="feedback" id="f1j">Réponse correcte: <span class="correct">préfère</span></div></span> (préférer) regarder la télévision.</p>
+                
+                <p>6. Ils ont décidé d'arrêter de fumer, ce n'est pas parce que le prix du tabac <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1k')">Voir la réponse</button> <div class="feedback" id="f1k">Réponse correcte: <span class="correct">a augmenté</span></div></span> (augmenter) mais ils <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1l')">Voir la réponse</button> <div class="feedback" id="f1l">Réponse correcte: <span class="correct">veulent</span></div></span> (vouloir) préserver leur santé.</p>
+                
+                <p>7. Les volets des voisins sont fermés : soit qu'ils <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1m')">Voir la réponse</button> <div class="feedback" id="f1m">Réponse correcte: <span class="correct">fassent</span></div></span> (faire) encore la grasse matinée, soit qu'ils <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1n')">Voir la réponse</button> <div class="feedback" id="f1n">Réponse correcte: <span class="correct">soient partis</span></div></span> (partir) pour plusieurs jours.</p>
+                
+                <p>8. Ce projet ne lui plaît pas: ce n'est pas que cette randonnée <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1o')">Voir la réponse</button> <div class="feedback" id="f1o">Réponse correcte: <span class="correct">puisse</span></div></span> (pouvoir) être dangereuse, mais c'est que <span class="subquestion"><input type="text" class="answer-input" placeholder="Votre réponse ici..."> <button class="show-feedback" onclick="showFeedback('q1p')">Voir la réponse</button> <div class="feedback" id="f1p">Réponse correcte: <span class="correct">est</span></div></span> (être) très fatigante et, à son âge, elle doit se ménager.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
