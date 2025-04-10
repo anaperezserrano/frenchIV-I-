@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicios de Francés</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .exercise {
+            background-color: white;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .sentence {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer {
+            display: none;
+            color: #2e7d32;
+            font-style: italic;
+            margin-top: 5px;
+            padding: 8px;
+            background-color: #e8f5e9;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .section {
+            margin-top: 30px;
+            border-top: 2px solid #ddd;
+            padding-top: 20px;
+        }
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+            min-height: 40px;
+        }
+        .response-area {
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicios de Traducción Español-Francés</h1>
+    
+    <div class="section">
+        <h2>Verbos y Tiempos Verbales</h2>
+        
+        <div class="exercise">
+            <div class="sentence">1. Yo voy al cine los viernes.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(1)">Mostrar respuesta</button>
+            <div id="answer1" class="answer">Je vais au cinéma le vendredi.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">2. Nosotros hemos comido en ese restaurante.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(2)">Mostrar respuesta</button>
+            <div id="answer2" class="answer">Nous avons mangé dans ce restaurant.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">3. Ella se acostó temprano anoche.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(3)">Mostrar respuesta</button>
+            <div id="answer3" class="answer">Elle s'est couchée tôt hier soir.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">4. ¿Vendrás a la fiesta mañana?</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(4)">Mostrar respuesta</button>
+            <div id="answer4" class="answer">Viens-tu à la fête demain?</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">5. Si tuviera dinero, viajaría a París.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(5)">Mostrar respuesta</button>
+            <div id="answer5" class="answer">Si j'avais de l'argent, je voyagerais à Paris.</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Expresiones de Tiempo</h2>
+        
+        <div class="exercise">
+            <div class="sentence">6. Llegaré dentro de diez minutos.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(6)">Mostrar respuesta</button>
+            <div id="answer6" class="answer">J'arriverai dans dix minutes.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">7. Hace dos meses que estudio francés.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(7)">Mostrar respuesta</button>
+            <div id="answer7" class="answer">Ça fait deux mois que j'étudie le français.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">8. De repente, empezó a llover.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(8)">Mostrar respuesta</button>
+            <div id="answer8" class="answer">Tout à coup, il a commencé à pleuvoir.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">9. Mientras cocinaba, escuchaba música.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(9)">Mostrar respuesta</button>
+            <div id="answer9" class="answer">Pendant que je cuisinais, j'écoutais de la musique.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">10. Antes de salir, apaga las luces.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(10)">Mostrar respuesta</button>
+            <div id="answer10" class="answer">Avant de sortir, éteins les lumières.</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Vocabulario - Transporte y Turismo</h2>
+        
+        <div class="exercise">
+            <div class="sentence">11. ¿Dónde está la estación de tren más cercana?</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(11)">Mostrar respuesta</button>
+            <div id="answer11" class="answer">Où est la gare la plus proche?</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">12. Quiero un billete de ida y vuelta a Marsella.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(12)">Mostrar respuesta</button>
+            <div id="answer12" class="answer">Je veux un billet aller-retour pour Marseille.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">13. El vuelo sale de la puerta de embarque número 12.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(13)">Mostrar respuesta</button>
+            <div id="answer13" class="answer">Le vol part de la porte d'embarquement numéro douze.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">14. Hemos reservado una habitación doble con baño.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(14)">Mostrar respuesta</button>
+            <div id="answer14" class="answer">Nous avons réservé une chambre double avec salle de bain.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">15. ¿Podría hablar con el señor Dupont, por favor?</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(15)">Mostrar respuesta</button>
+            <div id="answer15" class="answer">Pourrais-je parler à Monsieur Dupont, s'il vous plaît?</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Vocabulario - Salud</h2>
+        
+        <div class="exercise">
+            <div class="sentence">16. Me duele la cabeza y tengo fiebre.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(16)">Mostrar respuesta</button>
+            <div id="answer16" class="answer">J'ai mal à la tête et j'ai de la fièvre.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">17. Necesito una cita con el médico.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(17)">Mostrar respuesta</button>
+            <div id="answer17" class="answer">J'ai besoin d'un rendez-vous avec le médecin.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">18. ¿Está vacunado contra la gripe?</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(18)">Mostrar respuesta</button>
+            <div id="answer18" class="answer">Êtes-vous vacciné contre la grippe?</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">19. Tengo que tomar antibióticos durante una semana.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(19)">Mostrar respuesta</button>
+            <div id="answer19" class="answer">Je dois prendre des antibiotiques pendant une semaine.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">20. Mi hermano es alérgico a los frutos secos.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(20)">Mostrar respuesta</button>
+            <div id="answer20" class="answer">Mon frère est allergique aux fruits secs.</div>
+        </div>
+    </div>
+    
+    <div class="section">
+        <h2>Expresiones de Causa</h2>
+        
+        <div class="exercise">
+            <div class="sentence">21. No voy a la playa porque está lloviendo.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(21)">Mostrar respuesta</button>
+            <div id="answer21" class="answer">Je ne vais pas à la plage parce qu'il pleut.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">22. Como hacía frío, nos quedamos en casa.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(22)">Mostrar respuesta</button>
+            <div id="answer22" class="answer">Comme il faisait froid, nous sommes restés à la maison.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">23. No es que no me guste, sino que no tengo tiempo.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(23)">Mostrar respuesta</button>
+            <div id="answer23" class="answer">Ce n'est pas que je n'aime pas, mais je n'ai pas le temps.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">24. A causa del tráfico, llegué tarde al trabajo.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(24)">Mostrar respuesta</button>
+            <div id="answer24" class="answer">À cause de la circulation, je suis arrivé en retard au travail.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="sentence">25. Gracias a tu ayuda, terminé el proyecto a tiempo.</div>
+            <div class="response-area">
+                <textarea placeholder="Escribe tu traducción aquí..."></textarea>
+            </div>
+            <button onclick="showAnswer(25)">Mostrar respuesta</button>
+            <div id="answer25" class="answer">Grâce à ton aide, j'ai fini le projet à temps.</div>
+        </div>
+    </div>
+
+    <script>
+        function showAnswer(num) {
+            var answer = document.getElementById("answer" + num);
+            if (answer.style.display === "none" || answer.style.display === "") {
+                answer.style.display = "block";
+            } else {
+                answer.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
