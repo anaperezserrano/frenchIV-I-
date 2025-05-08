@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .instructions {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>4. Locutions conjonctives de conséquence + intensité (indicatif) : emploi et traduction</h1>
+    
+    <div class="instructions">
+        <p><strong>Consignes :</strong> Dans les phrases suivantes, ajoutez une idée d'intensité dans les conséquences (en utilisant des expressions comme "si/tellement... que", "à tel point que", etc.), puis traduisez-les en espagnol.</p>
+    </div>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="example">
+            <p><strong>Exemple :</strong> La grève a été dure ces jours-ci. Elle a paralysé tout le pays.</p>
+            <p>→ La grève a été <strong>si/tellement dure</strong> ces jours-ci <strong>qu'elle a paralysé</strong> tout le pays.</p>
+            <p>→ La grève a été dure <strong>au point de paralyser</strong> le pays.</p>
+            <p class="translation">La huelga ha sido tan dura durante estos días que ha paralizado todo el país.</p>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p>Le lac est gelé ; on peut patiner sur sa surface.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Réponse correcte :</p>
+                    <p>Le lac est <strong>si/tellement gelé qu'on peut</strong> patiner sur sa surface.</p>
+                    <p>Le lac est gelé <strong>à tel point qu'on peut</strong> patiner sur sa surface.</p>
+                    <p class="translation">El lago está tan helado que se puede patinar sobre su superficie.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Il boit très peu de vin. Son test d'alcoolémie est toujours négatif.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>Réponse correcte :</p>
+                    <p>Il boit <strong>si/tellement peu de vin que son</strong> test d'alcoolémie est toujours négatif.</p>
+                    <p class="translation">Bebe tan poco vino que su test de alcoholemia da siempre negativo.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Il mange trop ; il a toujours mal à l'estomac.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>Réponse correcte :</p>
+                    <p>Il mange <strong>tant/tellement qu'il a</strong> toujours mal à l'estomac.</p>
+                    <p>Il a mangé <strong>à tel point qu'il a</strong> toujours mal à l'estomac.</p>
+                    <p class="translation">Come tanto que siempre le duele el estómago.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Elle a caché ses bijoux. Elle ne les retrouve plus.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>Réponse correcte :</p>
+                    <p>Elle a <strong>tellement/tant caché</strong> ses bijoux <strong>qu'elle ne les</strong> retrouve plus.</p>
+                    <p>Elle a caché ses bijoux <strong>au point qu'elle ne les</strong> retrouve plus.</p>
+                    <p class="translation">Ha escondido tanto sus joyas que ya no las encuentra.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>Elle a eu des revers dans son existence ; elle a perdu toute joie de vivre.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>Réponse correcte :</p>
+                    <p>Elle a eu <strong>tant de/tellement de revers</strong> dans son existence <strong>qu'elle a perdu</strong> toute joie de vivre.</p>
+                    <p>Elle a eu des revers dans son existence <strong>au point qu'elle a perdu</strong> toute joie de vivre.</p>
+                    <p class="translation">Ha tenido tantos reveses en su vida que ha perdido todas las ganas de vivir.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p>Elle a beaucoup d'énergie. Elle fatigue tous ses amis.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase avec intensité)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+                <div class="feedback" id="f6">
+                    <p>Réponse correcte :</p>
+                    <p>Elle a <strong>une telle énergie qu'elle fatigue</strong> tous ses amis.</p>
+                    <p>Elle a <strong>tant/tellement d'énergie qu'elle fatigue</strong> tous ses amis.</p>
+                    <p class="translation">Tiene tal energía que cansa a todos sus amigos.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

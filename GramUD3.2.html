@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .text-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .radio-option {
+            margin: 10px 0;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>2. Locutions conjonctives de conséquence simple (SENS) : conséquence ou but ?</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><strong>Dans les phrases suivantes, dites si DE SORTE QUE, DE FAÇON QUE ou DE MANIÈRE QUE expriment la CONSÉQUENCE ou le BUT</strong></p>
+                <p>Ils ont augmenté la production de sorte que les ventes ont augmenté aussi.</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1a" value="CONSEQUENCE">
+                    <label for="q1a">CONSÉQUENCE</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q1" id="q1b" value="BUT">
+                    <label for="q1b">BUT</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>La réponse correcte est : <span class="correct">CONSÉQUENCE</span></p>
+                    <p>Explication : On utilise l'indicatif ("ont augmenté") pour exprimer une conséquence réelle.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Ils ont augmenté la production de sorte que les ventes augmentent aussi.</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2a" value="CONSEQUENCE">
+                    <label for="q2a">CONSÉQUENCE</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q2" id="q2b" value="BUT">
+                    <label for="q2b">BUT</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>La réponse correcte est : <span class="correct">BUT</span></p>
+                    <p>Explication : On utilise le subjonctif ("augmentent") pour exprimer un but.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Ils ont organisé le weekend de manière que les invités soient constamment occupés</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3a" value="BUT">
+                    <label for="q3a">BUT</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q3" id="q3b" value="CONSEQUENCE">
+                    <label for="q3b">CONSÉQUENCE</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>La réponse correcte est : <span class="correct">BUT</span></p>
+                    <p>Explication : Le subjonctif ("soient") indique un but recherché.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Ils ont organisé le weekend de telle manière que les invités sont constamment occupés</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4a" value="BUT">
+                    <label for="q4a">BUT</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q4" id="q4b" value="CONSEQUENCE">
+                    <label for="q4b">CONSÉQUENCE</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>La réponse correcte est : <span class="correct">CONSÉQUENCE</span></p>
+                    <p>Explication : L'indicatif ("sont") montre une conséquence effective.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>L'infirmier a approché le fauteuil de la vieille dame de la fenêtre de façon qu'elle a pu voir le paysage.</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5a" value="CONSEQUENCE">
+                    <label for="q5a">CONSÉQUENCE</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q5" id="q5b" value="BUT">
+                    <label for="q5b">BUT</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>La réponse correcte est : <span class="correct">CONSÉQUENCE</span></p>
+                    <p>Explication : "a pu voir" (indicatif) exprime un résultat effectif.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p>L'infirmier a approché le fauteuil de la vieille dame de la fenêtre de façon qu'elle puisse voir le paysage.</p>
+                
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6a" value="CONSEQUENCE">
+                    <label for="q6a">CONSÉQUENCE</label>
+                </div>
+                <div class="radio-option">
+                    <input type="radio" name="q6" id="q6b" value="BUT">
+                    <label for="q6b">BUT</label>
+                </div>
+                
+                <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+                <div class="feedback" id="f6">
+                    <p>La réponse correcte est : <span class="correct">BUT</span></p>
+                    <p>Explication : "puisse voir" (subjonctif) indique une intention.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

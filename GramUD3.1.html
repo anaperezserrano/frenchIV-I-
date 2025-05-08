@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .highlight {
+            font-weight: bold;
+            color: #d35400;
+        }
+        .text-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .highlighted {
+            background-color: #ffde00;
+            padding: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>1. SENSIBILISATION GRAMMATICALEs</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p><strong>Différents moyens linguistiques permettent d'exprimer LA CONSÉQUENCE : orthographiques, lexicaux et grammaticaux.</strong></p>
+                <p><strong>Relevez dans le texte ci-dessous les <span style="color: #ff0000;">moyens grammaticaux</span> qui permettent de l'exprimer ?</strong></p>
+            </div>
+            
+            <div class="text-content">
+                <p><strong>LISEZ LE TEXTES CI-DESOUS, PUIS RÉPONDÉZ AUX QUESTIONS SUIVANTES:</strong></p>
+                <p><strong>Quels sont les actrices et les acteurs français les plus célèbres et pourquoi ils sont très connus ?</strong></p>
+                
+                <p>Aujourd'hui on va parler de quelques actrices et acteurs connus du cinéma français. Je vais vous dire pour quels films ils sont connus ou pourquoi et vous raconter une ou plusieurs de leurs particularités. Et à la fin, je vous dirai qui est le seul français qui a remporté l'Oscar du meilleur acteur dans un premier rôle.</p>
+                
+                <p>Alors, on y va !</p>
+                
+                <p>On va commencer par rendre un hommage à un acteur qui vient de décéder à l'âge de 88 ans, le 6 septembre, si bien que tout le pays a été ému cette semaine. Il est décédé d'un accident vasculaire cérébral. Il en avait déjà eu un en 2001, de telle sorte qu'il était très affaibli depuis cette date. Il a surtout joué dans des films qui ont eu du succès dans les années 70 ou 80, de telle manière qu'il n'est pas associé aux films récents. Pourquoi il était célèbre ? L'une des raisons est qu'il faisait lui-même beaucoup de ses cascades, au point que cela rappelait les performances de Jackie Chan. Par exemple, il s'est retrouvé accroché à une échelle d'hélicoptère au-dessus de Venise sans protection, de telle façon que les spectateurs retenaient leur souffle. En 1989, il a reçu le César du meilleur acteur pour <em>Itinéraire d'un enfant gâté</em>, mais il a refusé le prix, tant et si bien que ce geste est devenu emblématique de son humilité.</p>
+                
+                <p>On passe à une actrice maintenant, Catherine Deneuve. Elle a une carrière tellement longue et impressionnante que son nom est connu dans le monde entier. Elle a tourné dans tant de films - environ 120 - que peu d'actrices peuvent en dire autant. Elle a été si souvent nommée aux Césars que cela en fait l'une des actrices les plus récompensées. Elle a été l'égérie de des maisons de couture telles que Chanel, si bien que son image reste associée à l'élégance française.</p>
+                
+                <p>On revient sur un acteur décédé, Louis de Funès. Il avait un talent comique tel que son nom est devenu synonyme de rire en France. Il faisait tellement de mimiques dans ses films que les enfants comme les adultes ne pouvaient s'empêcher de rire. Il a joué dans tant de films cultes que sa filmographie est une référence du cinéma comique. Il interprétait toujours le même type de personnage, à tel point que cela est devenu sa marque de fabrique.</p>
+                
+                <p>Gérard Depardieu, malgré ses excès, a eu une carrière tellement riche que personne ne peut ignorer son impact. Il a eu une jeunesse si troublée que cela aurait pu compromettre son avenir, mais il a suivi des cours de théâtre, de telle manière qu'il est devenu l'un des plus grands acteurs français. Il a joué dans tant de rôles variés que son registre va du film d'auteur au blockbuster. Il a aussi tourné à Hollywood, de telle façon que son nom est reconnu au niveau international.</p>
+                
+                <p>On continue avec Marion Cotillard. Elle a livré des performances si justes et émouvantes que cela lui a valu un Oscar, un César et un Golden Globe. Elle s'implique tellement dans ses rôles qu'elle est capable d'apprendre de nouvelles langues pour mieux incarner ses personnages. C'est une actrice avec un talent tel que sa renommée dépasse les frontières de la France.</p>
+                
+                <p>Puis vient Omar Sy. Il a connu un tel succès dans Intouchables que sa carrière a explosé à l'international. Il a joué dans tant de productions américaines que son nom est maintenant familier aux spectateurs du monde entier. Il est tellement apprécié dans la série <em>Lupin</em> que celle-ci est devenue un carton planétaire. Son parcours personnel a inspiré les scénaristes, si bien que la série semble en partie autobiographique.</p>
+                
+                <p>Enfin, Jean Dujardin. Il a remporté l'Oscar pour <em>The Artist</em>, un film muet si original que même les spectateurs non francophones peuvent l'apprécier sans difficulté. Il est devenu célèbre grâce à <em>Un gars, une fille</em>, une série avec des épisodes si courts et efficaces que le public l'a tout de suite adoptée. Elle est tellement ancrée dans la culture populaire que beaucoup de Français la connaissent par cœur.</p>
+            </div>
+            <label for="comentario">Résponse:</label><br> <textarea id="comentario" name="comentario" rows="4" cols="50"></textarea>
+            
+            <div class="question-text">
+                <p><strong>Réponses :</strong></p>
+                <button class="show-feedback" onclick="showFeedback('q1a')">Voir les réponses</button>
+                <div class="feedback" id="f1a">
+                    <p>Expressions grammaticales de conséquence dans le texte :</p>
+                    <div class="text-content">
+                        <p>On va commencer par rendre un hommage à un acteur qui vient de décéder à l'âge de 88 ans, le 6 septembre, <span class="highlighted">si bien que</span> tout le pays a été ému cette semaine. Il est décédé d'un accident vasculaire cérébral. Il en avait déjà eu un en 2001, <span class="highlighted">de telle sorte qu'</span>il était très affaibli depuis cette date. Il a surtout joué dans des films qui ont eu du succès dans les années 70 ou 80, de <span class="highlighted">telle manière qu'</span>il n'est pas associé aux films récents. Pourquoi il était célèbre ? L'une des raisons est qu'il faisait lui-même beaucoup de ses cascades, <span class="highlighted">au point que</span> cela rappelait les performances de Jackie Chan. Par exemple, il s'est retrouvé accroché à une échelle d'hélicoptère au-dessus de Venise sans protection, <span class="highlighted">de telle façon</span> que les spectateurs retenaient leur souffle. En 1989, il a reçu le César du meilleur acteur pour <em>Itinéraire d'un enfant gâté</em>, mais il a refusé le prix, <span class="highlighted">tant et si bien que</span> ce geste est devenu emblématique de son humilité.</p>
+                        
+                        <p>On passe à une actrice maintenant, Catherine Deneuve. Elle a une carrière <span class="highlighted">tellement longue et impressionnante que</span> son nom est connu dans le monde entier. Elle a tourné dans <span class="highlighted">tant de films</span> - environ 120 - <span class="highlighted">que</span> peu d'actrices peuvent en dire autant. Elle a été <span class="highlighted">si souvent nommée aux Césars que</span> cela en fait l'une des actrices les plus récompensées. Elle a été l'égérie de des maisons de couture telles que Chanel, <span class="highlighted">si bien que</span> son image reste associée à l'élégance française.</p>
+                        
+                        <p>On revient sur un acteur décédé, Louis de Funès. Il avait <span class="highlighted">un talent comique tel que</span> son nom est devenu synonyme de rire en France. Il faisait <span class="highlighted">tellement de mimiques</span> dans ses films <span class="highlighted">que</span> les enfants comme les adultes ne pouvaient s'empêcher de rire. Il a joué dans <span class="highlighted">tant de films cultes</span> <span class="highlighted">que</span> sa filmographie est une référence du cinéma comique. Il interprétait <span class="highlighted">toujours le même type de personnage</span>, <span class="highlighted">à tel point que</span> cela est devenu sa marque de fabrique.</p>
+                        
+                        <p>Gérard Depardieu, malgré ses excès, a eu une carrière <span class="highlighted">tellement riche que</span> personne ne peut ignorer son impact. Il a eu <span class="highlighted">une jeunesse si troublée que</span> cela aurait pu compromettre son avenir, mais il a suivi des cours de théâtre, <span class="highlighted">de telle manière qu'</span>il est devenu l'un des plus grands acteurs français. Il a joué dans <span class="highlighted">tant de rôles variés</span> <span class="highlighted">que</span> son registre va du film d'auteur au blockbuster. Il a aussi tourné à Hollywood, <span class="highlighted">de telle façon que</span> son nom est reconnu au niveau international.</p>
+                        
+                        <p>On continue avec Marion Cotillard. Elle a livré des performances <span class="highlighted">si justes et émouvantes que</span> cela lui a valu un Oscar, un César et un Golden Globe. Elle s'implique <span class="highlighted">tellement dans ses rôles</span> <span class="highlighted">qu'</span>elle est capable d'apprendre de nouvelles langues pour mieux incarner ses personnages. C'est une actrice avec <span class="highlighted">un talent tel que</span> sa renommée dépasse les frontières de la France.</p>
+                        
+                        <p>Puis vient Omar Sy. Il a connu <span class="highlighted">un tel succès dans Intouchables</span> <span class="highlighted">que</span> sa carrière a explosé à l'international. Il a joué dans <span class="highlighted">tant de productions américaines</span> <span class="highlighted">que</span> son nom est maintenant familier aux spectateurs du monde entier. Il est <span class="highlighted">tellement apprécié</span> dans la série <em>Lupin</em> <span class="highlighted">que</span> celle-ci est devenue un carton planétaire. Son parcours personnel a inspiré les scénaristes, <span class="highlighted">si bien que</span> la série semble en partie autobiographique.</p>
+                        
+                        <p>Enfin, Jean Dujardin. Il a remporté l'Oscar pour <em>The Artist</em>, <span class="highlighted">un film muet si original que</span> même les spectateurs non francophones peuvent l'apprécier sans difficulté. Il est devenu célèbre grâce à <em>Un gars, une fille</em>, une série avec <span class="highlighted">des épisodes si courts et efficaces que</span> le public l'a tout de suite adoptée. Elle est <span class="highlighted">tellement ancrée dans la culture populaire</span> <span class="highlighted">que</span> beaucoup de Français la connaissent par cœur.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

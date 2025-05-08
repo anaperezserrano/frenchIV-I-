@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.5</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .instructions {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .conjunctions-list {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>5. Locutions conjonctives de conséquence + intensité (subjonctif): emploi et traduction</h1>
+    
+    <div class="instructions">
+        <p><strong>Consignes :</strong> Reliez les deux propositions à l'aide d'une des conjonctions suivantes, puis traduisez les phrases obtenues.</p>
+        <div class="conjunctions-list">
+            <p><em>trop ...pour que; trop de....pour que</em></p>
+            <p><em>pas trop ....pour que; pas trop de ....pour que</em></p>
+            <p><em>assez... pour que; assez de .....pour que</em></p>
+            <p><em>pas assez ....pour que; pas assez de ....pour que</em></p>
+            <p><em>suffisamment ...pour que; suffisamment de....pour que</em></p>
+            <p><em>pas suffisamment....pour que; pas suffisamment de...pour que</em></p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="example">
+            <p><strong>Exemple :</strong> Il pleut trop; le match de tennis ne commencera pas.</p>
+            <p>→ Il pleut <strong>trop pour que</strong> le match de tennis <strong>commence</strong>.</p>
+            <p class="translation">Llueve demasiado como para que empiece el partido</p>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p>Il y a trop peu d'émissions intéressantes à la télévision; elle ne m'attire pas.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Réponse correcte :</p>
+                    <p>Il y a <strong>trop peu d'émissions intéressantes</strong> à la télévision <strong>pour qu'elle m'attire</strong>.</p>
+                    <p>Il n'y a <strong>pas assez d'émissions intéressantes</strong> à la télévision <strong>pour qu'elle m'attire</strong>.</p>
+                    <p class="translation">Hay muy pocos/No hay suficientes programas interesantes en la tele como para que me atraiga</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Il y a trop de monde ici; on n'est pas à l'aise.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>Réponse correcte :</p>
+                    <p>Il y a <strong>trop de monde</strong> ici <strong>pour que l'on soit</strong> à l'aise.</p>
+                    <p class="translation">Hay demasiada gente aquí como para que estemos a gusto/ nos sintamos cómodos</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Il fait assez beau; les touristes feront une promenade en mer.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>Réponse correcte :</p>
+                    <p>Il fait <strong>assez beau pour que</strong> les touristes <strong>fassent</strong> une promenade en mer.</p>
+                    <p>Il fait <strong>suffisamment beau pour que</strong> les touristes <strong>fassent</strong> une promenade en mer.</p>
+                    <p class="translation">Hace suficientemente bueno como para que los turistas puedan dar un paseo en barco</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Il court assez vite; on ne le dépassera pas.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>Réponse correcte :</p>
+                    <p>Il court <strong>trop vite pour qu'on</strong> le <strong>dépasse</strong>.</p>
+                    <p class="translation">Corre demasiado rápido como para que lo adelanten</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>Il y a suffisamment de neige; nous pourrons skier.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>Réponse correcte :</p>
+                    <p>Il y a <strong>suffisamment de neige pour que nous puissions</strong> skier.</p>
+                    <p class="translation">Hay suficiente nieve como para que podamos esquiar / como para poder esquiar</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p>Ses efforts ne furent pas assez importants. Il ne gagna pas.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+                <div class="feedback" id="f6">
+                    <p>Réponse correcte :</p>
+                    <p>Ses efforts ne furent pas <strong>suffisamment importants pour qu'il gagnât</strong>.</p>
+                    <p>Il ne fit pas <strong>assez d'efforts pour qu'il gagnât</strong>.</p>
+                    <p class="translation">Sus esfuerzos no fueron lo suficientemente importantes como para que ganara</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

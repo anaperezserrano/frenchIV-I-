@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.3</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>3. Locutions conjonctives de conséquence simple (EMPLOI ET TRADUCTION) : Conséquence ou but?</h1>
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="example">
+            <p><strong>Exemple :</strong> Il a déplacé légèrement son siège; ainsi elle voyait parfaitement la scène.</p>
+            <p>→ Il a déplacé légèrement son siège <strong>si bien qu'</strong>elle <strong>voyait</strong> parfaitement la scène. <strong>(CONSÉQUENCE)</strong></p>
+            <p class="translation">Movió ligeramente su asiento, con lo cual veía perfectamente el escenario</p>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p>Il a déplacé légèrement son siège; ainsi elle verrait parfaitement la scène.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Réponse correcte :</p>
+                    <p>Il a déplacé légèrement son siège <strong>afin qu'</strong>elle <strong>puisse voir</strong> parfaitement la scène. <strong>(BUT)</strong></p>
+                    <p class="translation">Movió ligeramente su asiento para que pudiera ver perfectamente el escenario</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>On lui a demandé de ne pas boire au cours de la soirée: ainsi il pourrait conduire pour rentrer chez lui.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>Réponse correcte :</p>
+                    <p>On lui a demandé de ne pas boire au cours de la soirée <strong>de sorte qu'</strong>il <strong>puisse</strong> conduire pour rentrer chez lui. <strong>(BUT)</strong></p>
+                    <p class="translation">Le pedimos que no bebiera durante la velada para que pudiera conducir de vuelta a casa</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Il n'a pas bu au cours de la soirée; ainsi il a pu conduire pour rentrer chez lui.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>Réponse correcte :</p>
+                    <p>Il n'a pas bu au cours de la soirée <strong>si bien qu'</strong>il <strong>a pu</strong> conduire pour rentrer chez lui. <strong>(CONSÉQUENCE)</strong></p>
+                    <p class="translation">No bebió durante la velada, de modo que pudo conducir de vuelta a casa</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Le journaliste a enquêté soigneusement; ainsi les lecteurs savent tout de cette affaire mystérieuse.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>Réponse correcte :</p>
+                    <p>Le journaliste a enquêté soigneusement <strong>de telle façon que</strong> les lecteurs <strong>savent</strong> tout de cette affaire mystérieuse. <strong>(CONSÉQUENCE)</strong></p>
+                    <p class="translation">El periodista investigó cuidadosamente, de manera que los lectores conocen todo sobre este misterioso asunto</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>Le journaliste a enquêté soigneusement; ainsi les lecteurs sauraient tout de cette affaire mystérieuse.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>Réponse correcte :</p>
+                    <p>Le journaliste a enquêté soigneusement <strong>de manière que</strong> les lecteurs <strong>sachent</strong> tout de cette affaire mystérieuse. <strong>(BUT)</strong></p>
+                    <p class="translation">El periodista investigó cuidadosamente para que los lectores supieran todo sobre este misterioso asunto</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p>Elle parle devant un micro; ainsi on l'entend du fond de la salle.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+                <div class="feedback" id="f6">
+                    <p>Réponse correcte :</p>
+                    <p>Elle parle devant un micro <strong>de telle sorte qu'</strong>on <strong>l'entend</strong> du fond de la salle. <strong>(CONSÉQUENCE)</strong></p>
+                    <p class="translation">Habla ante un micrófono, de forma que se la oye desde el fondo de la sala</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">
+                <p>Elle parle devant un micro; ainsi on l'entendrait du fond de la salle.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée + type entre parenthèses)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+                <div class="feedback" id="f7">
+                    <p>Réponse correcte :</p>
+                    <p>Elle parle devant un micro <strong>pour qu'</strong>on <strong>l'entende</strong> du fond de la salle. <strong>(BUT)</strong></p>
+                    <p class="translation">Habla ante un micrófono para que se la oiga desde el fondo de la sala</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
