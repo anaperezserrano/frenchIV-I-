@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.6</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .instructions {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .conjunctions-list {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            border-left: 4px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>6. ¿ Locutions conjonctives ou prépositives?</h1>
+    
+    <div class="instructions">
+        <p><strong>Consignes :</strong> Transformer les phrases ci-dessous en utilisant les locutions conjonctives ou prépositives suivantes.</p>
+        <div class="conjunctions-list">
+            <p><strong>SANS QUE / SANS</strong></p>
+            <p><strong>AU POINT QUE / AU POINT DE</strong></p>
+            <p><strong>TROP... POUR QUE / TROP... POUR</strong></p>
+            <p><strong>PAS ASSEZ......POUR QUE / PAS ASSEZ ...POUR</strong></p>
+            <p><strong>SUFFISAMMENT DE .... POUR QUE / SUFFISAMMENT POUR</strong></p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="example">
+            <p><strong>Exemple :</strong> (une grande star du rock se plaint) Je ne peux aller tranquillement nulle part: on me reconnaît</p>
+            <p>→ Je ne peux pas aller tranquillement nulle part <strong>sans qu'on me reconnaisse</strong> (sujet différent)</p>
+            <p>→ Je ne peux pas aller tranquillement nulle part <strong>sans être reconnue</strong> (même sujet)</p>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p>(une grande star du rock se plaint) Je ne peux pas me promener dans la rue : je suis interpellée par des inconnus.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Réponse correcte :</p>
+                    <p>Je ne peux pas me promener dans la rue <strong>sans être interpellée</strong> par des inconnus (même sujet)</p>
+                    <p>Je ne peux pas me promener dans la rue <strong>sans que des inconnus m'interpellent</strong> (différent sujet)</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Nous avons dépensé des fortunes. Nous n'avons plus un sou sur notre compte.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>Réponse correcte :</p>
+                    <p>Nous avons dépensé des fortunes, <strong>au point que nous n'avons plus un sou</strong> sur notre compte</p>
+                    <p>Nous avons dépensé des fortunes <strong>au point de ne plus avoir un sou</strong> sur notre compte</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Ces vêtements ne sont plus assez élégants. Tante Sophie ne veut plus les garder.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>Réponse correcte :</p>
+                    <p>Ces vêtements ne sont pas <strong>assez élégants pour que</strong> Tante Sophie <strong>veuille</strong> les garder</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Cette jeune fille est trop belle. Les hommes n'osent pas lui parler.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>Réponse correcte :</p>
+                    <p>Cette jeune fille est <strong>trop belle pour que</strong> les hommes <strong>osent</strong> lui parler</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>Elle est très mignonne. Elle ne restera pas longtemps célibataire.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>Réponse correcte :</p>
+                    <p>Elle est <strong>trop mignonne pour rester</strong> longtemps célibataire</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q6">
+            <div class="question-number">Question 6</div>
+            <div class="question-text">
+                <p>Il n'est pas assez intelligent. Il ne devinera pas.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q6')">Voir la réponse</button>
+                <div class="feedback" id="f6">
+                    <p>Réponse correcte :</p>
+                    <p>Il n'est pas <strong>assez intelligent pour le deviner</strong></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q7">
+            <div class="question-number">Question 7</div>
+            <div class="question-text">
+                <p>Ils sont assez malins. Ils se cacheront le temps nécessaire.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q7')">Voir la réponse</button>
+                <div class="feedback" id="f7">
+                    <p>Réponse correcte :</p>
+                    <p>Ils sont <strong>assez malins pour se cacher</strong> le temps nécessaire</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q8">
+            <div class="question-number">Question 8</div>
+            <div class="question-text">
+                <p>Les étudiants ont assez travaillé. On leur accorde une journée de repos.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q8')">Voir la réponse</button>
+                <div class="feedback" id="f8">
+                    <p>Réponse correcte :</p>
+                    <p>Les étudiants ont <strong>assez travaillé pour qu'on</strong> leur <strong>accorde</strong> une journée de repos</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q9">
+            <div class="question-number">Question 9</div>
+            <div class="question-text">
+                <p>La moyenne de ses notes est trop basse; on ne peut l'autoriser à passer dans la classe supérieure.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q9')">Voir la réponse</button>
+                <div class="feedback" id="f9">
+                    <p>Réponse correcte :</p>
+                    <p>La moyenne de ses notes est <strong>trop basse pour qu'on puisse</strong> l'autoriser à passer dans la classe supérieure</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q10">
+            <div class="question-number">Question 10</div>
+            <div class="question-text">
+                <p>Mes parents sont trop loin de nous; ils ne viendront pas pour Noël.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q10')">Voir la réponse</button>
+                <div class="feedback" id="f10">
+                    <p>Réponse correcte :</p>
+                    <p>Mes parents sont <strong>trop loin de nous pour venir</strong> pour Noël</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

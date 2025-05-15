@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.7.</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .instructions {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>7. Locutions prépositives + infinitif : emploi et traduction</h1>
+    
+    <div class="instructions">
+        <p><strong>Consignes :</strong> Reliez les phrases suivantes à l'aide d'une locution prépositive de conséquence. Faites des modifications si c'est nécessaire, puis traduisez les phrases obtenues.</p>
+    </div>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="example">
+            <p><strong>Exemple :</strong> En ce moment j'ai trop de travail; je n'ai pas le temps de sortir.</p>
+            <p>→ En ce moment j'ai <strong>trop de travail pour pouvoir</strong> sortir.</p>
+            <p class="translation">En estos momentos tengo demasiado trabajo como para poder salir</p>
+        </div>
+        
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <p>Ma fille est assez bonne en maths. Elle pourra faire des études d'ingénieur.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir la réponse</button>
+                <div class="feedback" id="f1">
+                    <p>Réponse correcte :</p>
+                    <p>Ma fille est <strong>assez bonne en maths pour faire</strong> des études d'ingénieur.</p>
+                    <p class="translation">Mi hija es lo bastante buena en mates como para poder estudiar ingeniería</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Le professeur était très intéressant; il attirait un public de plus en plus nombreux.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la réponse</button>
+                <div class="feedback" id="f2">
+                    <p>Réponse correcte :</p>
+                    <p>Le professeur était <strong>intéressant au point d'attirer</strong> un public de plus en plus nombreux.</p>
+                    <p class="translation">El profesor era interesante hasta el punto de atraer a un público cada vez más numeroso</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q3">
+            <div class="question-number">Question 3</div>
+            <div class="question-text">
+                <p>Il était très timide; il rougissait à la moindre question.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q3')">Voir la réponse</button>
+                <div class="feedback" id="f3">
+                    <p>Réponse correcte :</p>
+                    <p>Il était <strong>timide au point de rougir</strong> à la moindre question.</p>
+                    <p class="translation">Era tímido hasta el punto de ponerse rojo ante la más mínima pregunta</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q4">
+            <div class="question-number">Question 4</div>
+            <div class="question-text">
+                <p>Elle a beaucoup couru; elle a perdu le souffle.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q4')">Voir la réponse</button>
+                <div class="feedback" id="f4">
+                    <p>Réponse correcte :</p>
+                    <p>Elle a <strong>couru à en perdre</strong> le souffle.</p>
+                    <p class="translation">Ha corrido hasta quedarse sin aliento</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q5">
+            <div class="question-number">Question 5</div>
+            <div class="question-text">
+                <p>Il ne peut pas supporter la même critique; il se fâche.</p>
+                <textarea class="answer-input" rows="3" placeholder="Votre réponse ici... (phrase reliée)"></textarea>
+                <textarea class="answer-input" rows="2" placeholder="Traduction en espagnol..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q5')">Voir la réponse</button>
+                <div class="feedback" id="f5">
+                    <p>Réponse correcte :</p>
+                    <p>Il ne peut pas supporter la même critique <strong>sans se fâcher</strong>.</p>
+                    <p class="translation">No puede soportar la misma crítica sin enfadarse</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>

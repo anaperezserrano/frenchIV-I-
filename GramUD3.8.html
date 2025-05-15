@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.3.8</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        .question-block {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .question:last-child {
+            border-bottom: none;
+        }
+        .question-text {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .answer-input {
+            padding: 8px 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+            width: 100%;
+            max-width: 500px;
+            margin-top: 5px;
+        }
+        .correct {
+            color: #28a745;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #dc3545;
+        }
+        .feedback {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e8f8f5;
+            border-radius: 4px;
+            border-left: 4px solid #2ecc71;
+        }
+        .show-feedback {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+        .show-feedback:hover {
+            background-color: #2980b9;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .controls button {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 0 5px;
+            font-size: 14px;
+        }
+        .controls button:hover {
+            background-color: #5a6268;
+        }
+        .question-number {
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+        .example {
+            background-color: #fff8e1;
+            padding: 10px;
+            border-left: 4px solid #ffc107;
+            margin: 10px 0;
+        }
+        .translation {
+            font-style: italic;
+            color: #6c757d;
+        }
+        .instructions {
+            background-color: #e7f5fe;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            margin-bottom: 20px;
+            border-radius: 4px;
+        }
+        .text-with-gaps {
+            margin: 15px 0;
+            line-height: 2;
+        }
+        .gap {
+            border-bottom: 1px solid #333;
+            padding: 0 5px;
+            min-width: 80px;
+            display: inline-block;
+            text-align: center;
+            margin: 0 5px;
+        }
+        .word-bank {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 4px;
+            margin: 15px 0;
+            border-left: 4px solid #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <h1>8. Connecteurs discursifs (adverbes ou conjonctions de coordination) : emploi et traduction</h1>
+    
+    <div class="instructions">
+        <p><strong>Consignes :</strong> Lisez le texte ci-dessous, puis complétez correctement les trous à l'aide des mots de liaison suivants. Ensuite, traduisez le texte complet.</p>
+        <div class="word-bank">
+            <p><strong>Mots de liaison :</strong> alors, ainsi, aussi, c'est pourquoi, donc, en conséquence, par conséquent</p>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <button onclick="showAllFeedback()">Afficher toutes les réponses</button>
+        <button onclick="hideAllFeedback()">Cacher toutes les réponses</button>
+    </div>
+    
+    <div class="question-block">
+        <div class="question" id="q1">
+            <div class="question-number">Question 1</div>
+            <div class="question-text">
+                <div class="text-with-gaps">
+                    <p>Un jour j'ai commencé à écrire un roman. Écrire à la main, c'est très agréable, mais très long. Après de nombreuses réflexions, j'ai <span class="gap"><input type="text" class="answer-input" size="5" placeholder="..."></span> décidé d'acheter un ordinateur. <span class="gap"><input type="text" class="answer-input" size="16" placeholder="..."></span> je me suis rendu dans un magasin spécialisé pour me renseigner. Est-ce qu'il valait mieux acheter un Mac ou un PC, un ordinateur portable ou un ordinateur de bureau? Les vendeurs n'avaient pas beaucoup de temps à me consacrer, <span class="gap"><input type="text" class="answer-input" size="6" placeholder="..."></span> leurs renseignements étaient-ils incomplets. <span class="gap"><input type="text" class="answer-input" size="6" placeholder="..."></span>, je suis allé dans un deuxième magasin. J'ai retrouvé le même scénario. Puis dans un troisième. Mais, ce jour-là, il était fermé et sur la porte une pancarte annonçait: "Un mouvement social a entraîné un conflit entre les employés et la direction, <span class="gap"><input type="text" class="answer-input" size="17" placeholder="..."></span> le magasin sera fermé pour une durée indéterminée". Que faire? J'ai pris mon courage à deux mains et je me suis plongé dans toutes les brochures d'information sur les ordinateurs. Et j'ai choisi tout seul mon ordinateur; <span class="gap"><input type="text" class="answer-input" size="16" placeholder="..."></span>, je peux dire que l'ordinateur que j'ai acheté est vraiment mon ordinateur et que j'en connais toutes les qualités et tous les défauts. <span class="gap"><input type="text" class="answer-input" size="15" placeholder="..."></span>, grâce à des vendeurs qui ne sont pas toujours disponibles, j'ai enrichi ma connaissance et mon expérience dans un domaine dont j'ignorais tout.</p>
+                </div>
+                <button class="show-feedback" onclick="showFeedback('q1')">Voir les réponses</button>
+                <div class="feedback" id="f1">
+                    <p>Réponses correctes :</p>
+                    <ol>
+                        <li><strong>donc</strong></li>
+                        <li><strong>C'est pourquoi</strong></li>
+                        <li><strong>aussi</strong></li>
+                        <li><strong>Alors</strong></li>
+                        <li><strong>en conséquence</strong></li>
+                        <li><strong>par conséquent</strong></li>
+                        <li><strong>Ainsi</strong></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        
+        <div class="question" id="q2">
+            <div class="question-number">Question 2</div>
+            <div class="question-text">
+                <p>Traduisez maintenant le texte complet en espagnol :</p>
+                <textarea class="answer-input" rows="10" placeholder="Votre traduction ici..."></textarea>
+                <button class="show-feedback" onclick="showFeedback('q2')">Voir la traduction</button>
+                <div class="feedback" id="f2">
+                    <p>Traduction correcte :</p>
+                    <p class="translation">Un día empecé a escribir una novela. Escribir a mano es muy agradable, pero muy lento. Después de mucho reflexionar, decidí comprar un ordenador. Así pues, acudí a una tienda especializada para informarme. ¿Qué era mejor comprarme un MAC o un PC, un ordenador portátil o un ordenador de sobremesa? Los vendedores no tenían mucho tiempo para mí, con lo cual la información era incompleta. Entonces, fui a una segunda tienda. Me encontré con la misma situación. Y después a una tercera. Sin embargo, ese día, ésta estaba cerrada y en la puerta había un cartel que decía: "Un movimiento social ha provocado un conflicto entre los empleados y la dirección. Por consiguiente, la tienda permanecerá cerrada por un período indeterminado". ¿Qué hacer? Me armé de valor y me empapé todos los folletos informativos sobre ordenadores. Y así, elegí yo mismo mi ordenador; por lo tanto, puedo decir que el ordenador que he comprado es realmente mi ordenador y que conozco todas sus cualidades y todos sus defectos. Conque, gracias a los vendeores que no siempre están disponibles, he enriquecido mis conocimientos y mi experiencia en un ámbito que ignoraba por completo.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showFeedback(questionId) {
+            const feedbackId = 'f' + questionId.substring(1);
+            const feedback = document.getElementById(feedbackId);
+            if (feedback.style.display === "block") {
+                feedback.style.display = "none";
+            } else {
+                feedback.style.display = "block";
+            }
+        }
+        
+        function showAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "block";
+            });
+        }
+        
+        function hideAllFeedback() {
+            const feedbacks = document.querySelectorAll('.feedback');
+            feedbacks.forEach(fb => {
+                fb.style.display = "none";
+            });
+        }
+    </script>
+</body>
+</html>
